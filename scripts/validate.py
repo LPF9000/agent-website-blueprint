@@ -11,7 +11,7 @@ import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
 SECTIONS = ['Purpose','When needed','Prerequisites','Recommended implementation','Setup','Security considerations','Free-tier limitations','Verification','Troubleshooting','Official documentation']
-GUIDES = ['getting-started','website-planning','architecture-selection','github-setup','cloudflare-setup','domain-and-dns','frontend-development','database-options','supabase-setup','authentication','admin-dashboard','api-development','content-management','seo','accessibility','performance','security','testing','deployment','monitoring','maintenance','backup-and-recovery','cost-management','production-checklist']
+GUIDES = ['getting-started','website-planning','architecture-selection','github-setup','cloudflare-setup','domain-and-dns','frontend-development','database-options','supabase-setup','authentication','admin-dashboard','api-development','content-management','seo','accessibility','performance','security','testing','deployment','monitoring','maintenance','backup-and-recovery','cost-management','production-checklist','operational-failure-modes']
 
 class UniqueLoader(yaml.SafeLoader):
     pass

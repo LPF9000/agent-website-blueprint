@@ -12,3 +12,7 @@ Keep dependency count small, use a supported runtime, pin reviewed versions and 
 After an update run relevant type/build/behavior tests, hosted-preview compatibility and rollback checks. Record the exact changed version and evidence. Alerts are signals, not proof that all code is safe.
 
 Sources: [GitHub secure use](https://docs.github.com/en/actions/reference/security/secure-use), [Dependabot options](https://docs.github.com/en/code-security/reference/supply-chain-security/dependabot-options-reference), [npm audit](https://docs.npmjs.com/cli/commands/npm-audit). Reviewed 2026-10-28; recheck advisories before updates.
+
+## Operational cross-check
+
+Triage each advisory against the deployed architecture: build-time code, browser assets, server runtime and provider-managed components have different exposure. Static output does not execute every installed server API, but build-chain risks remain. Record evidence and unresolved uncertainty; see [runtime-aware triage](../docs/25-operational-failure-modes.md).

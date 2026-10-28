@@ -27,4 +27,6 @@ Start with [getting started](01-getting-started.md), follow only the modules you
 - [23. Cost management](23-cost-management.md)
 - [24. Production readiness checklist](24-production-checklist.md)
 
+- [25. Operational failure modes and release evidence](25-operational-failure-modes.md)
+
 Additional references: [optional integrations](integrations.md), [official sources](sources.md), [machine-readable sources](sources.json), [current-source protocol](source-freshness.md), [validation report](validation-report.md).

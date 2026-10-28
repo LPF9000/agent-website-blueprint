@@ -25,3 +25,7 @@ Before payment code, read current official docs for the selected integration/API
 Use synthetic data and test recipients on preview; do not send production mail or book real slots during tests. Review personal-data collection, retention, provider terms and scopes. Add only the necessary SDKs/credentials. A contact form must not become an arbitrary email relay. Displaying an event is different from atomically reserving a scarce appointment.
 
 Pricing snapshots are dated 2026-10-28. Many alternative-provider details are discovery-only and must be reviewed using the [source register](sources.md) and [freshness protocol](source-freshness.md). No account/project/integration in this matrix was provisioned or tested by the blueprint.
+
+## Operational cross-check
+
+Payment launch also requires [recoverable fulfillment and receiver lifecycle](25-operational-failure-modes.md): durable deduplication/receipt, atomic entitlement/outbox where needed, appropriate acknowledgement/retry semantics, independent email recovery and restricted reconciliation. Document active environment-specific receiver URLs and signing-secret references; closed previews must not silently strand sandbox delivery.

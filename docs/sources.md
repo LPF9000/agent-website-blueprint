@@ -88,3 +88,10 @@ Use [sources.json](sources.json) for machine-readable topic IDs, official URLs, 
 - Network/tool restrictions can prevent live URL checks. Mark unavailable content as unverified and use an official alternate source, rather than silently declaring the integration verified.
 
 Source checking is not a scheduled service. The [source-review script](../scripts/sources.py) can report stale/discovery entries locally; optional live HTTP checks only report reachability and cannot prove instruction freshness. Review breaking changes/advisories and installed versions before applying a template.
+
+## Operational release references
+
+- [cloudflare-preview-config](https://developers.cloudflare.com/workers/previews/configuration/): Preview/base/runtime configuration lifecycle. Focused documentation reviewed 2026-10-28; integration not executed.
+- [access-jwt](https://developers.cloudflare.com/cloudflare-one/access-controls/applications/http-apps/authorization-cookie/validating-json/): Origin JWT validation with expected issuer/audience. Focused documentation reviewed 2026-10-28; integration not executed.
+- [access-token-types](https://developers.cloudflare.com/cloudflare-one/access-controls/applications/http-apps/authorization-cookie/application-token/): Human/machine claim differences; service subject may be empty. Focused documentation reviewed 2026-10-28; integration not executed.
+- [access-service-tokens](https://developers.cloudflare.com/cloudflare-one/access-controls/service-credentials/service-tokens/): Scoped CI/service credentials and actual authorization policy. Focused documentation reviewed 2026-10-28; integration not executed.

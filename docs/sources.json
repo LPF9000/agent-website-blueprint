@@ -727,6 +727,46 @@
       "last_reviewed": null,
       "integration_executed": false,
       "notes": ""
+    },
+    {
+      "id": "cloudflare-preview-config",
+      "topic": "deployment",
+      "url": "https://developers.cloudflare.com/workers/previews/configuration/",
+      "use_for": "Preview/base/runtime configuration lifecycle",
+      "status": "reviewed",
+      "last_reviewed": "2026-10-28",
+      "integration_executed": false,
+      "notes": "Focused official documentation retrieved for generic operational guidance; no resource changes or live integration tests."
+    },
+    {
+      "id": "access-jwt",
+      "topic": "security",
+      "url": "https://developers.cloudflare.com/cloudflare-one/access-controls/applications/http-apps/authorization-cookie/validating-json/",
+      "use_for": "Origin JWT validation with expected issuer/audience",
+      "status": "reviewed",
+      "last_reviewed": "2026-10-28",
+      "integration_executed": false,
+      "notes": "Focused official documentation retrieved for generic operational guidance; no resource changes or live integration tests."
+    },
+    {
+      "id": "access-token-types",
+      "topic": "auth",
+      "url": "https://developers.cloudflare.com/cloudflare-one/access-controls/applications/http-apps/authorization-cookie/application-token/",
+      "use_for": "Human/machine claim differences; service subject may be empty",
+      "status": "reviewed",
+      "last_reviewed": "2026-10-28",
+      "integration_executed": false,
+      "notes": "Focused official documentation retrieved for generic operational guidance; no resource changes or live integration tests."
+    },
+    {
+      "id": "access-service-tokens",
+      "topic": "auth",
+      "url": "https://developers.cloudflare.com/cloudflare-one/access-controls/service-credentials/service-tokens/",
+      "use_for": "Scoped CI/service credentials and actual authorization policy",
+      "status": "reviewed",
+      "last_reviewed": "2026-10-28",
+      "integration_executed": false,
+      "notes": "Focused official documentation retrieved for generic operational guidance; no resource changes or live integration tests."
     }
   ]
 }

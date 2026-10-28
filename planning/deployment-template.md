@@ -13,3 +13,7 @@ Provider/account/project identifiers (non-secret); runtime/tool versions; root/b
 ## Deployment and rollback runbook
 
 Write numbered, provider-verified steps to build, test preview, review, authorize promotion, deploy, verify hostname and contain failures. Include who can execute rollback and how to confirm restored behavior. Database rollback is separate: describe backward-compatible migrations and recovery/export steps, backup age and restore evidence. State scheduled maintenance/notification ownership and unresolved blockers.
+
+## Operational cross-check
+
+Link or incorporate [environment matrix](environment-matrix-template.md) and [release evidence](release-evidence-template.md) for configuration lifecycle, intended parity, external receiver ownership, exact hosted version and recoverable side effects. These templates store references/evidence only, never secrets or customer records.

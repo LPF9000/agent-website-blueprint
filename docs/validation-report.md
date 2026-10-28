@@ -13,7 +13,7 @@ Validation date: 2026-10-28. Scope: documentation repository and its offline Pyt
 | YAML | PyYAML 6.0.3 with duplicate-key detection and correct handling of GitHub on; workflow permissions, timeouts, checkout credential persistence and full action SHA pins checked. Not a complete GitHub Actions schema/expression validator. |
 | Secret/configuration review | Empty env example values; high-confidence credential/private-key patterns; static SQL RLS/read-only grant assertions; manual unsafe-default review. This is not exhaustive secret scanning or SQL execution. |
 | Python regression suite | 14 tests passed: unsafe/missing config, credential/path/DNS rejection, redirect rules, body bounds, expected headers/markers, sitemap/robots parsing, links/anchors, JSON refs and workflow pins/permissions. No live network probes in these tests. |
-| Source review | Official focused docs reviewed as marked in sources.json; 71 registered sources with review versus discovery status and no integration-executed claims. |
+| Source review | Official focused docs reviewed as marked in sources.json; 75 registered sources with review versus discovery status and no integration-executed claims. |
 | Additional external links | 81 URLs requested through web retrieval; 80 returned retrievable results, npm audit content unavailable/empty. Some returned shells/sparse content and are not treated as reviewed. See external-link-checks.json. |
 | Action pin | Official actions/checkout v7.0.1 Git ref and action.yml retrieved; pinned SHA is 3d3c42e5aac5ba805825da76410c181273ba90b1. |
 
@@ -46,3 +46,8 @@ README points to START-HERE and the standalone master workflow. All eight phases
 ## Remaining consumer setup
 
 Fork/clone, run discovery, create the actual website plan, select only needed modules, connect authorized providers, verify isolated preview and approve production release. Enable selected operational workflows only after safe target/notification testing and quota review. No further credentials are needed to read or use this blueprint.
+
+
+## 0.1.1 operational documentation update
+
+Adds one supplementary guide plus environment/release evidence templates and cross-links in existing agent, deployment and security documents. Source register now includes focused Access token-type/service/JWT and preview-configuration references. No application, infrastructure, payment, email, download or identity changes were made. Offline validation and the existing 14 safety/parser tests are rerun before publication; hosted CI status is verified separately. Public documentation uses generic examples and official vendor references only; no unrelated site information or project identifiers are included.

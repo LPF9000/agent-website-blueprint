@@ -60,3 +60,7 @@ Update roadmap/progress/decisions/deployment as relevant, then handoff. Summariz
 ## Current-source retrieval gate
 
 Before version-sensitive implementation, read [source freshness](docs/source-freshness.md) and [official source register](docs/sources.md); use [sources.json](docs/sources.json) to find topic URLs, indexes and changelogs. Match documentation to installed versions, check current security advisories and limits, and record source/date/version plus actual verification in project decisions. A successful URL fetch is not a reviewed instruction, and a reviewed instruction is not a tested integration. Never assume dated guidance is current.
+
+## Configuration and operational evidence
+
+For selected integrations, read [operational failure modes](docs/25-operational-failure-modes.md). Capture build/runtime/provider setting lifecycle and intended environment parity without secrets; resolve preview to the intended SHA/version; verify payment/access/email recovery and private-file ingress where applicable. A missing required protection/configuration/report must fail closed or be recorded unavailable, never become an implicit pass. Keep reusable documentation generic: no unrelated project names, domains, product names, identifiers, copied project code or private provenance links.

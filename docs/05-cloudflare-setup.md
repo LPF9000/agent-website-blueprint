@@ -50,3 +50,7 @@ Wrong account: stop and reselect, do not create duplicates. Build failures: insp
 [Workers getting started](https://developers.cloudflare.com/workers/get-started/guide/) · [Wrangler configuration](https://developers.cloudflare.com/workers/wrangler/configuration/) · [GitHub integration](https://developers.cloudflare.com/workers/ci-cd/builds/git-integration/github-integration/) · [Pages Git integration](https://developers.cloudflare.com/pages/get-started/git-integration/) · [Workers secrets](https://developers.cloudflare.com/workers/configuration/secrets/) · [Workers previews](https://developers.cloudflare.com/workers/previews/) · [Rollbacks](https://developers.cloudflare.com/workers/versions-and-deployments/rollbacks/)
 
 External guidance reviewed: 2026-10-28 where listed in the [source register](sources.md). Source review is not a live integration test. Recheck current versions, advisories and pricing using the [freshness protocol](source-freshness.md) before implementation.
+
+## Operational cross-check
+
+Before changing build/base/runtime settings or testing a protected preview, follow [configuration lifecycle and exact-version checks](25-operational-failure-modes.md). A dashboard save does not prove existing previews changed; record non-secret configuration evidence in the [environment matrix](../planning/environment-matrix-template.md).

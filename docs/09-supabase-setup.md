@@ -49,3 +49,7 @@ Permission denied: inspect grants then RLS, identity and exposed-schema configur
 [Supabase changelog](https://supabase.com/changelog) · [API keys](https://supabase.com/docs/guides/getting-started/api-keys) · [RLS](https://supabase.com/docs/guides/database/postgres/row-level-security) · [Auth SSR](https://supabase.com/docs/guides/auth/server-side) · [MCP setup](https://supabase.com/docs/guides/getting-started/mcp) · [Backups](https://supabase.com/docs/guides/platform/backups)
 
 External guidance reviewed: 2026-10-28 where listed in the [source register](sources.md). Source review is not a live integration test. Recheck current versions, advisories and pricing using the [freshness protocol](source-freshness.md) before implementation.
+
+## Operational cross-check
+
+Use the [environment matrix](../planning/environment-matrix-template.md) to track migration history, RLS/grants and intended Auth-template/policy parity. Keep SMTP secrets, callback URLs and all customer data environment-specific; see [operational failure modes](25-operational-failure-modes.md). Shared preview data needs namespaced fixtures and controlled cleanup, not unapproved resets.

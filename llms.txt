@@ -16,7 +16,7 @@
 - [External retrieval evidence](docs/external-link-checks.json): Reachability only, not content review.
 
 ## Implementation and evidence
-- [Guide index](docs/README.md): Twenty-four guides in order; choose required modules.
+- [Guide index](docs/README.md): Twenty-five guides in order; choose required modules.
 - [Planning](planning/README.md): Persistent .project/ templates and ADR.
 - [Security baseline](security/security-baseline.md): Applicable control/evidence matrix.
 - [Recipes](examples/README.md): Six architectural examples, not tested applications.
@@ -24,3 +24,8 @@
 - [Templates](templates/README.md): Config, contracts, read-only SQL and headers.
 - [Automation](automation/README.md): Opt-in bounded daily/weekly checks and monthly human review.
 - [Validation](docs/validation-report.md): Executed checks and limits.
+
+## Operational release details
+- [Failure modes](docs/25-operational-failure-modes.md): Configuration lifecycle, recoverable fulfillment, protected files, Access identity and honest evidence.
+- [Environment matrix](planning/environment-matrix-template.md): Intended parity and configuration ownership, without secret values.
+- [Release evidence](planning/release-evidence-template.md): Exact preview/version and failure-case verification.

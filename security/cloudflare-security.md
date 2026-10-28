@@ -13,3 +13,7 @@ Read [Cloudflare setup](../docs/05-cloudflare-setup.md) before making account/re
 Production verification: actual hostname TLS/redirects, public/private routes, noindex separation, static/dynamic/error headers, limited permissions, provider usage alerts and rollback version. Audit account and app installation access monthly.
 
 Sources: [Cloudflare TLS](https://developers.cloudflare.com/ssl/), [static headers](https://developers.cloudflare.com/workers/static-assets/headers/), [secrets](https://developers.cloudflare.com/workers/configuration/secrets/), [Turnstile Siteverify](https://developers.cloudflare.com/turnstile/get-started/server-side-validation/), [rate limiting](https://developers.cloudflare.com/waf/rate-limiting-rules/). Recheck current capabilities and pricing; reviewed 2026-10-28.
+
+## Operational cross-check
+
+For Access-protected previews/admin, use [identity and callback checks](../docs/25-operational-failure-modes.md): validate signed JWTs, distinguish human from machine identities, scope CI credentials and any approved callback exception narrowly. Current Access service-token subjects can be empty; required claims must match the expected token type, not a universal human-identity rule.

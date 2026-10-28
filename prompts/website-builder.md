@@ -57,3 +57,7 @@ After every meaningful unit of work update roadmap, progress, decisions/architec
 ## Current-source retrieval gate
 
 Before version-sensitive implementation, read [source freshness](../docs/source-freshness.md) and [official source register](../docs/sources.md); use [sources.json](../docs/sources.json) to find topic URLs, indexes and changelogs. Match documentation to installed versions, check current security advisories and limits, and record source/date/version plus actual verification in project decisions. A successful URL fetch is not a reviewed instruction, and a reviewed instruction is not a tested integration. Never assume dated guidance is current.
+
+## Operational release gate
+
+Read [operational failure modes](../docs/25-operational-failure-modes.md) for selected modules. Plan configuration lifecycle/parity, exact-SHA hosted preview evidence, payment/entitlement/email recovery, webhook receiver retirement, private-file ingress tests and Access user/machine authorization. Required security configuration fails closed; missing reports or skipped tests never count as passes. Use the environment/release evidence templates; keep all examples and records generic and free of unrelated project identifiers.

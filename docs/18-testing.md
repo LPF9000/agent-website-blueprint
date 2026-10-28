@@ -48,3 +48,7 @@ Flaky tests: isolate state and wait for observable UI conditions rather than fix
 [Playwright configuration](https://playwright.dev/docs/test-configuration) · [Playwright best practices](https://playwright.dev/docs/best-practices) · [Accessibility tests](https://playwright.dev/docs/accessibility-testing) · [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview)
 
 External guidance reviewed: 2026-10-28 where listed in the [source register](sources.md). Source review is not a live integration test. Recheck current versions, advisories and pricing using the [freshness protocol](source-freshness.md) before implementation.
+
+## Operational cross-check
+
+For hosted release tests, use [exact-version release evidence](../planning/release-evidence-template.md) and [operational failure modes](25-operational-failure-modes.md). Include missing-required-secret denial, unavailable scan reports, known-file authorized/denied pairs and selected integration failure recovery. Missing/skipped/unreachable checks never become zero findings or a pass.

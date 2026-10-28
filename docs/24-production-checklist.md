@@ -59,3 +59,7 @@ If evidence predates a relevant change, rerun affected checks. If no preview exi
 [Cloudflare deployment docs](https://developers.cloudflare.com/workers/configuration/versions-and-deployments/) · [OWASP ASVS](https://owasp.org/www-project-application-security-verification-standard/) · [WAI evaluation](https://www.w3.org/WAI/test-evaluate/)
 
 External guidance reviewed: 2026-10-28 where listed in the [source register](sources.md). Source review is not a live integration test. Recheck current versions, advisories and pricing using the [freshness protocol](source-freshness.md) before implementation.
+
+## Operational cross-check
+
+- [ ] [Operational failure-mode gates](25-operational-failure-modes.md) reviewed: exact preview SHA/configuration, environment parity, active webhook receivers, payment/entitlement/email recovery, known-file access across ingress, Access identity types, publication boundary and missing-report failures. Mark unselected modules N/A with a reason; link [release evidence](../planning/release-evidence-template.md).

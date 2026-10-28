@@ -22,3 +22,7 @@ Record commit, date, environment, reviewer, result and evidence per item. Unknow
 - [ ] Known limitations, unexecuted checks and safe remediation tasks recorded in progress/handoff.
 
 Use [baseline](security-baseline.md), [auth](authentication-security.md), [API](api-security.md), [database](database-security.md), [Cloudflare](cloudflare-security.md), [dependencies](dependency-security.md) and [incident response](incident-response.md). Review [OWASP ASVS](https://owasp.org/www-project-application-security-verification-standard/) for requirements appropriate to actual risk. Automated scanners cannot complete this review alone.
+
+## Operational cross-check
+
+- [ ] [Operational failure modes](../docs/25-operational-failure-modes.md) tested for selected modules: required configuration absent, exact preview version, private bytes across ingress, signed user/machine Access identities, webhook/entitlement/outbox recovery and missing-report failure. Tests use synthetic isolated data and record unknowns honestly.

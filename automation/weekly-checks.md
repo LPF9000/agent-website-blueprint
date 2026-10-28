@@ -17,3 +17,7 @@ Security/cost: no production mutation fixtures or active attack scans; no deploy
 Verification/troubleshooting: manually run each selected job, confirm dependency/browser/audit failures fail the job, review allowlist coverage and test notifications. Missing scripts/preview intentionally fail rather than silently skip. Basic robots checks cannot establish indexing/rankings; automated accessibility cannot replace manual review. Scheduled failure review needs a human owner.
 
 External references reviewed 2026-10-28; runtime browser/Lighthouse/ZAP integrations were not executed here. See [source freshness](../docs/source-freshness.md).
+
+## Operational cross-check
+
+Required report-producing checks must treat absent/malformed reports and unreachable targets as failed/unavailable, not zero findings. Retain scope, ignored rules and coverage exclusions in summaries. Apply [failure-evidence guidance](../docs/25-operational-failure-modes.md); optional disabled modules remain unverified.

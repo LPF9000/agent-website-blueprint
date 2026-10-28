@@ -14,3 +14,7 @@ Copy these into each website repository's `.project/` directory **before impleme
 | [ADR](adr-template.md) | `.project/adr/NNNN-short-title.md` for major decisions |
 
 Update triggers and evidence levels are defined in [AGENTS.md](../AGENTS.md). Do not publish private user data in these files even when the source repository is private.
+
+## Operational cross-check
+
+Additional optional evidence records: [environment matrix](environment-matrix-template.md) and [release evidence](release-evidence-template.md). Link them from `.project/deployment.md` or keep equivalent sections there; no new state file is mandatory.

@@ -48,3 +48,7 @@ Green build but wrong site: inspect connected repo/branch/root/output and provid
 [Workers deployments](https://developers.cloudflare.com/workers/configuration/versions-and-deployments/) · [Workers rollbacks](https://developers.cloudflare.com/workers/versions-and-deployments/rollbacks/) · [Pages rollback](https://developers.cloudflare.com/pages/configuration/rollbacks/) · [Wrangler commands](https://developers.cloudflare.com/workers/wrangler/commands/)
 
 External guidance reviewed: 2026-10-28 where listed in the [source register](sources.md). Source review is not a live integration test. Recheck current versions, advisories and pricing using the [freshness protocol](source-freshness.md) before implementation.
+
+## Operational cross-check
+
+Apply [operational failure modes](25-operational-failure-modes.md) before release: resolve preview to the intended SHA/version with bounded polling, verify settings reached that instance, inspect the exact published output, and retire dependent webhook receivers deliberately. Capture [release evidence](../planning/release-evidence-template.md); do not impose health-job timeouts on longer deployment waits without measurement.

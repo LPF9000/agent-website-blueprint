@@ -30,7 +30,7 @@ Next.js is appropriate for substantial application behavior, not a universal def
 - [Agent operating contract](AGENTS.md): scope, safe changes, task states, evidence and handoffs.
 - [Prompts](prompts/START-HERE.md): build, resume, audit, deployment review and maintenance.
 - [Planning](planning/README.md): requirements, roadmap, progress, decisions, architecture, deployment and handoff templates; [ADR template](planning/adr-template.md).
-- [24-guide learning path](docs/README.md): planning through operations, including Cloudflare, optional Supabase, admin/API, SEO, accessibility, testing and costs.
+- [Implementation guide path](docs/README.md): planning through operations, including Cloudflare, optional Supabase, admin/API, SEO, accessibility, testing and costs.
 - [Security baseline](security/security-baseline.md) and [audit checklist](security/security-audit-checklist.md): architecture-specific controls and incident response.
 - [Automation](automation/README.md): opt-in daily health checks, weekly quality checks and monthly human review.
 - [Templates](templates/README.md): environment, GitHub, Cloudflare, Supabase, API contracts and headers.
@@ -38,7 +38,7 @@ Next.js is appropriate for substantial application behavior, not a universal def
 
 ## Current guidance for coding agents
 
-Start at [source freshness](docs/source-freshness.md) and the [official source register](docs/sources.md). [sources.json](docs/sources.json) maps 71 topic-specific official references to docs, changelogs, review dates and execution status; [llms.txt](llms.txt) is the repository navigation index. Agents must recheck installed versions, security advisories, compatibility and pricing before using integration instructions. A reachable page is not automatically reviewed or tested.
+Start at [source freshness](docs/source-freshness.md) and the [official source register](docs/sources.md). [sources.json](docs/sources.json) maps topic-specific official references to docs, changelogs, review dates and execution status; [llms.txt](llms.txt) is the repository navigation index. Agents must recheck installed versions, security advisories, compatibility and pricing before using integration instructions. A reachable page is not automatically reviewed or tested.
 
 ## Free-first, with limits
 
