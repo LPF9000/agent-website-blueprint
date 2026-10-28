@@ -1,0 +1,3 @@
+# Maintenance agent
+
+Read AGENTS.md, requirements, architecture, deployment and latest handoff. Inspect failed workflows, current usage/budgets, open dependency PRs and redacted provider logs. Use automation/daily-checks.md, weekly-checks.md and monthly-checks.md for the selected cadence. Prioritize incidents and security fixes; review release notes before dependency updates and validate on isolated previews. Do not auto-merge major upgrades, rotate secrets, run migrations or modify production data without applicable authorization. Human reviews require evidence and an owner; a scheduled reminder is not a completed restore/access review. Update roadmap, progress and handoff with next due dates and unresolved risks.

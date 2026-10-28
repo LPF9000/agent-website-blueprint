@@ -1,0 +1,29 @@
+name: Blueprint integrity
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: blueprint-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  validate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1, official tag verified 2026-10-28
+        with:
+          persist-credentials: false
+      - name: Install pinned validator dependency
+        run: python3 -m pip install --disable-pip-version-check -r scripts/requirements.txt
+      - name: Documentation and configuration integrity
+        run: python3 scripts/validate.py
+      - name: Safety and parser regression tests
+        run: python3 -m unittest discover -s tests -v
+      - name: Summary
+        if: always()
+        run: |
+          echo 'Blueprint integrity checked. No website or provider integration was deployed/tested by this job.' >> "$GITHUB_STEP_SUMMARY"

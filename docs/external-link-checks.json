@@ -1,0 +1,573 @@
+{
+  "date": "2026-10-28",
+  "scope": "Additional external URL retrieval via web tool; not content review/integration execution. Primary sources also reviewed separately in sources.json.",
+  "checks": [
+    {
+      "requested_url": "https://cheatsheetseries.owasp.org/",
+      "date": "2026-10-28",
+      "status": "retrieved",
+      "title": "Introduction - OWASP Cheat Sheet Series (https://cheatsheetseries.owasp.org/)",
+      "note": "Reachability only; relevant instructions require review"
+    },
+    {
+      "requested_url": "https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html",
+      "date": "2026-10-28",
+      "status": "retrieved",
+      "title": "Authentication - OWASP Cheat Sheet Series (https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html)",
+      "note": "Reachability only; relevant instructions require review"
+    },
+    {
+      "requested_url": "https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html",
+      "date": "2026-10-28",
+      "status": "retrieved",
+      "title": "Authorization - OWASP Cheat Sheet Series (https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html)",
+      "note": "Reachability only; relevant instructions require review"
+    },
+    {
+      "requested_url": "https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Headers_Cheat_Sheet.html",
+      "date": "2026-10-28",
+      "status": "retrieved",
+      "title": "HTTP Headers - OWASP Cheat Sheet Series (https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Headers_Cheat_Sheet.html)",
+      "note": "Reachability only; relevant instructions require review"
+    },
+    {
+      "requested_url": "https://cheatsheetseries.owasp.org/cheatsheets/Server_Side_Request_Forgery_Prevention_Cheat_Sheet.html",
+      "date": "2026-10-28",
+      "status": "retrieved",
+      "title": "Server Side Request Forgery Prevention - OWASP Cheat Sheet Series (https://cheatsheetseries.owasp.org/cheatsheets/Server_Side_Request_Forgery_Prevention_Cheat_Sheet.html)",
+      "note": "Reachability only; relevant instructions require review"
+    },
+    {
+      "requested_url": "https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html",
+      "date": "2026-10-28",
+      "status": "retrieved",
+      "title": "Session Management - OWASP Cheat Sheet Series (https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html)",
+      "note": "Reachability only; relevant instructions require review"
+    },
+    {
+      "requested_url": "https://decapcms.org/docs/",
+      "date": "2026-10-28",
+      "status": "retrieved",
+      "title": "Docs | Decap CMS | Open-Source Content Management System (https://decapcms.org/docs/)",
+      "note": "Reachability only; relevant instructions require review"
+    },
+    {
+      "requested_url": "https://developers.cloudflare.com/changelog/",
+      "date": "2026-10-28",
+      "status": "retrieved",
+      "title": "Changelogs | Cloudflare Docs (https://developers.cloudflare.com/changelog/)",
+      "note": "Reachability only; relevant instructions require review"
+    },
+    {
+      "requested_url": "https://developers.cloudflare.com/d1/",
+      "date": "2026-10-28",
+      "status": "retrieved",
+      "title": "Overview · Cloudflare D1 docs (https://developers.cloudflare.com/d1/)",
+      "note": "Reachability only; relevant instructions require review"
+    },
+    {
+      "requested_url": "https://developers.cloudflare.com/d1/best-practices/import-export-data/",
+      "date": "2026-10-28",
+      "status": "retrieved",
+      "title": "Import and export data · Cloudflare D1 docs (https://developers.cloudflare.com/d1/best-practices/import-export-data/)",
+      "note": "Reachability only; relevant instructions require review"
+    },
+    {
+      "requested_url": "https://developers.cloudflare.com/d1/llms.txt",
+      "date": "2026-10-28",
+      "status": "retrieved",
+      "title": " (https://developers.cloudflare.com/d1/llms.txt)",
+      "note": "Reachability only; relevant instructions require review"
+    },
+    {
+      "requested_url": "https://developers.cloudflare.com/d1/reference/time-travel/",
+      "date": "2026-10-28",
+      "status": "retrieved",
+      "title": "Time Travel and backups · Cloudflare D1 docs (https://developers.cloudflare.com/d1/reference/time-travel/)",
+      "note": "Reachability only; relevant instructions require review"
+    },
+    {
+      "requested_url": "https://developers.cloudflare.com/dns/",
+      "date": "2026-10-28",
+      "status": "retrieved",
+      "title": "Cloudflare DNS · Cloudflare DNS docs (https://developers.cloudflare.com/dns/)",
+      "note": "Reachability only; relevant instructions require review"
+    },
+    {
+      "requested_url": "https://developers.cloudflare.com/dns/zone-setups/full-setup/setup/",
+      "date": "2026-10-28",
+      "status": "retrieved",
+      "title": "Change your nameservers (Full setup) · Cloudflare DNS docs (https://developers.cloudflare.com/dns/zone-setups/full-setup/setup/)",
+      "note": "Reachability only; relevant instructions require review"
+    },
+    {
+      "requested_url": "https://developers.cloudflare.com/kv/",
+      "date": "2026-10-28",
+      "status": "retrieved",
+      "title": "Cloudflare Workers KV · Cloudflare Workers KV docs (https://developers.cloudflare.com/kv/)",
+      "note": "Reachability only; relevant instructions require review"
+    },
+    {
+      "requested_url": "https://developers.cloudflare.com/kv/concepts/how-kv-works/",
+      "date": "2026-10-28",
+      "status": "retrieved",
+      "title": "How KV works · Cloudflare Workers KV docs (https://developers.cloudflare.com/kv/concepts/how-kv-works/)",
+      "note": "Reachability only; relevant instructions require review"
+    },
+    {
+      "requested_url": "https://developers.cloudflare.com/kv/llms.txt",
+      "date": "2026-10-28",
+      "status": "retrieved",
+      "title": " (https://developers.cloudflare.com/kv/llms.txt)",
+      "note": "Reachability only; relevant instructions require review"
+    },
+    {
+      "requested_url": "https://developers.cloudflare.com/pages/configuration/custom-domains/",
+      "date": "2026-10-28",
+      "status": "retrieved",
+      "title": "Custom domains · Cloudflare Pages docs (https://developers.cloudflare.com/pages/configuration/custom-domains/)",
+      "note": "Reachability only; relevant instructions require review"
+    },
+    {
+      "requested_url": "https://developers.cloudflare.com/pages/configuration/rollbacks/",
+      "date": "2026-10-28",
+      "status": "retrieved",
+      "title": "Rollbacks · Cloudflare Pages docs (https://developers.cloudflare.com/pages/configuration/rollbacks/)",
+      "note": "Reachability only; relevant instructions require review"
+    },
+    {
+      "requested_url": "https://developers.cloudflare.com/pages/get-started/git-integration/",
+      "date": "2026-10-28",
+      "status": "retrieved",
+      "title": "Git integration guide · Cloudflare Pages docs (https://developers.cloudflare.com/pages/get-started/git-integration/)",
+      "note": "Reachability only; relevant instructions require review"
+    },
+    {
+      "requested_url": "https://developers.cloudflare.com/r2/",
+      "date": "2026-10-28",
+      "status": "retrieved",
+      "title": "Overview · Cloudflare R2 docs (https://developers.cloudflare.com/r2/)",
+      "note": "Reachability only; relevant instructions require review"
+    },
+    {
+      "requested_url": "https://developers.cloudflare.com/r2/llms.txt",
+      "date": "2026-10-28",
+      "status": "retrieved",
+      "title": " (https://developers.cloudflare.com/r2/llms.txt)",
+      "note": "Reachability only; relevant instructions require review"
+    },
+    {
+      "requested_url": "https://developers.cloudflare.com/ssl/",
+      "date": "2026-10-28",
+      "status": "retrieved",
+      "title": "Overview · Cloudflare SSL/TLS docs (https://developers.cloudflare.com/ssl/)",
+      "note": "Reachability only; relevant instructions require review"
+    },
+    {
+      "requested_url": "https://developers.cloudflare.com/ssl/edge-certificates/additional-options/http-strict-transport-security/",
+      "date": "2026-10-28",
+      "status": "retrieved",
+      "title": "HTTP Strict Transport Security (HSTS) · Cloudflare SSL/TLS docs (https://developers.cloudflare.com/ssl/edge-certificates/additional-options/http-strict-transport-security/)",
+      "note": "Reachability only; relevant instructions require review"
+    },
+    {
+      "requested_url": "https://developers.cloudflare.com/ssl/origin-configuration/ssl-modes/full-strict/",
+      "date": "2026-10-28",
+      "status": "retrieved",
+      "title": "Full (strict) - SSL/TLS encryption modes · Cloudflare SSL/TLS docs (https://developers.cloudflare.com/ssl/origin-configuration/ssl-modes/full-strict/)",
+      "note": "Reachability only; relevant instructions require review"
+    },
+    {
+      "requested_url": "https://developers.cloudflare.com/turnstile/plans/",
+      "date": "2026-10-28",
+      "status": "retrieved",
+      "title": "Cloudflare Turnstile plans · Cloudflare Turnstile docs (https://developers.cloudflare.com/turnstile/plans/)",
+      "note": "Reachability only; relevant instructions require review"
+    },
+    {
+      "requested_url": "https://developers.cloudflare.com/waf/rate-limiting-rules/",
+      "date": "2026-10-28",
+      "status": "retrieved",
+      "title": "Rate limiting rules · Cloudflare Web Application Firewall (WAF) docs (https://developers.cloudflare.com/waf/rate-limiting-rules/)",
+      "note": "Reachability only; relevant instructions require review"
+    },
+    {
+      "requested_url": "https://developers.cloudflare.com/web-analytics/",
+      "date": "2026-10-28",
+      "status": "retrieved",
+      "title": "Overview · Cloudflare Web Analytics docs (https://developers.cloudflare.com/web-analytics/)",
+      "note": "Reachability only; relevant instructions require review"
+    },
+    {
+      "requested_url": "https://developers.cloudflare.com/workers/configuration/routing/custom-domains/",
+      "date": "2026-10-28",
+      "status": "retrieved",
+      "title": "Custom Domains · Cloudflare Workers docs (https://developers.cloudflare.com/workers/configuration/routing/custom-domains/)",
+      "note": "Reachability only; relevant instructions require review"
+    },
+    {
+      "requested_url": "https://developers.cloudflare.com/workers/configuration/secrets/",
+      "date": "2026-10-28",
+      "status": "retrieved",
+      "title": "Secrets · Cloudflare Workers docs (https://developers.cloudflare.com/workers/configuration/secrets/)",
+      "note": "Reachability only; relevant instructions require review"
+    },
+    {
+      "requested_url": "https://developers.cloudflare.com/workers/configuration/versions-and-deployments/",
+      "date": "2026-10-28",
+      "status": "retrieved",
+      "title": "Versions & deployments · Cloudflare Workers docs (https://developers.cloudflare.com/workers/configuration/versions-and-deployments/)",
+      "note": "Reachability only; relevant instructions require review"
+    },
+    {
+      "requested_url": "https://developers.cloudflare.com/workers/get-started/guide/",
+      "date": "2026-10-28",
+      "status": "retrieved",
+      "title": "Get started - CLI · Cloudflare Workers docs (https://developers.cloudflare.com/workers/get-started/guide/)",
+      "note": "Reachability only; relevant instructions require review"
+    },
+    {
+      "requested_url": "https://developers.cloudflare.com/workers/llms.txt",
+      "date": "2026-10-28",
+      "status": "retrieved",
+      "title": " (https://developers.cloudflare.com/workers/llms.txt)",
+      "note": "Reachability only; relevant instructions require review"
+    },
+    {
+      "requested_url": "https://developers.cloudflare.com/workers/observability/",
+      "date": "2026-10-28",
+      "status": "retrieved",
+      "title": "Observability · Cloudflare Workers docs (https://developers.cloudflare.com/workers/observability/)",
+      "note": "Reachability only; relevant instructions require review"
+    },
+    {
+      "requested_url": "https://developers.cloudflare.com/workers/wrangler/commands/",
+      "date": "2026-10-28",
+      "status": "retrieved",
+      "title": "Commands - Wrangler · Cloudflare Workers docs (https://developers.cloudflare.com/workers/wrangler/commands/)",
+      "note": "Reachability only; relevant instructions require review"
+    },
+    {
+      "requested_url": "https://developers.google.com/search/docs/crawling-indexing/sitemaps/overview",
+      "date": "2026-10-28",
+      "status": "retrieved",
+      "title": "What Is a Sitemap | Google Search Central  |  Documentation  |  Google for Developers (https://developers.google.com/search/docs/crawling-indexing/sitemaps/overview)",
+      "note": "Reachability only; relevant instructions require review"
+    },
+    {
+      "requested_url": "https://developers.google.com/search/docs/essentials",
+      "date": "2026-10-28",
+      "status": "retrieved",
+      "title": "Google Search Essentials (formerly Webmaster Guidelines) | Google Search Central  |  Documentation  |  Google for Developers (https://developers.google.com/search/docs/essentials)",
+      "note": "Reachability only; relevant instructions require review"
+    },
+    {
+      "requested_url": "https://developers.google.com/workspace/calendar/api/guides/overview",
+      "date": "2026-10-28",
+      "status": "retrieved",
+      "title": "Google Calendar API overview  |  Google for Developers (https://developers.google.com/workspace/calendar/api/guides/overview)",
+      "note": "Reachability only; relevant instructions require review"
+    },
+    {
+      "requested_url": "https://developers.google.com/workspace/calendar/api/guides/quota",
+      "date": "2026-10-28",
+      "status": "retrieved",
+      "title": "Usage limits  |  Google Calendar  |  Google for Developers (https://developers.google.com/workspace/calendar/api/guides/quota)",
+      "note": "Reachability only; relevant instructions require review"
+    },
+    {
+      "requested_url": "https://directus.io/docs/",
+      "date": "2026-10-28",
+      "status": "retrieved",
+      "title": "Directus Docs (https://directus.io/docs/)",
+      "note": "Reachability only; relevant instructions require review"
+    },
+    {
+      "requested_url": "https://docs.astro.build/en/guides/content-collections/",
+      "date": "2026-10-28",
+      "status": "retrieved",
+      "title": "Content collections | Docs (https://docs.astro.build/en/guides/content-collections/)",
+      "note": "Reachability only; relevant instructions require review"
+    },
+    {
+      "requested_url": "https://docs.astro.build/en/guides/images/",
+      "date": "2026-10-28",
+      "status": "retrieved",
+      "title": "Images | Docs (https://docs.astro.build/en/guides/images/)",
+      "note": "Reachability only; relevant instructions require review"
+    },
+    {
+      "requested_url": "https://docs.astro.build/en/guides/typescript/",
+      "date": "2026-10-28",
+      "status": "retrieved",
+      "title": "TypeScript | Docs (https://docs.astro.build/en/guides/typescript/)",
+      "note": "Reachability only; relevant instructions require review"
+    },
+    {
+      "requested_url": "https://docs.github.com/en/code-security/secret-scanning/introduction/about-secret-scanning",
+      "date": "2026-10-28",
+      "status": "retrieved",
+      "title": "Secret scanning - GitHub Docs (https://docs.github.com/en/code-security/secret-scanning/introduction/about-secret-scanning)",
+      "note": "Reachability only; relevant instructions require review"
+    },
+    {
+      "requested_url": "https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo",
+      "date": "2026-10-28",
+      "status": "retrieved",
+      "title": "Fork a repository - GitHub Docs (https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo)",
+      "note": "Reachability only; relevant instructions require review"
+    },
+    {
+      "requested_url": "https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository",
+      "date": "2026-10-28",
+      "status": "retrieved",
+      "title": "Creating a new repository - GitHub Docs (https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository)",
+      "note": "Reachability only; relevant instructions require review"
+    },
+    {
+      "requested_url": "https://docs.npmjs.com/cli/commands/npm-audit",
+      "date": "2026-10-28",
+      "status": "unverified",
+      "title": "docs.npmjs.com (https://docs.npmjs.com/cli/commands/npm-audit)",
+      "note": "May be empty/JS shell; do not claim content reviewed"
+    },
+    {
+      "requested_url": "https://git-scm.com/downloads",
+      "date": "2026-10-28",
+      "status": "retrieved",
+      "title": "Redirecting… (https://git-scm.com/downloads)",
+      "note": "Reachability only; relevant instructions require review"
+    },
+    {
+      "requested_url": "https://github.com/advisories",
+      "date": "2026-10-28",
+      "status": "retrieved",
+      "title": "GitHub Advisory Database · GitHub (https://github.com/advisories)",
+      "note": "Reachability only; relevant instructions require review"
+    },
+    {
+      "requested_url": "https://github.com/microsoft/TypeScript/releases",
+      "date": "2026-10-28",
+      "status": "retrieved",
+      "title": "Releases · microsoft/TypeScript · GitHub (https://github.com/microsoft/TypeScript/releases)",
+      "note": "Reachability only; relevant instructions require review"
+    },
+    {
+      "requested_url": "https://github.com/tailwindlabs/tailwindcss/releases",
+      "date": "2026-10-28",
+      "status": "retrieved",
+      "title": "Releases · tailwindlabs/tailwindcss · GitHub (https://github.com/tailwindlabs/tailwindcss/releases)",
+      "note": "Reachability only; relevant instructions require review"
+    },
+    {
+      "requested_url": "https://github.com/vercel/next.js/releases",
+      "date": "2026-10-28",
+      "status": "retrieved",
+      "title": "Releases · vercel/next.js · GitHub (https://github.com/vercel/next.js/releases)",
+      "note": "Reachability only; relevant instructions require review"
+    },
+    {
+      "requested_url": "https://github.com/withastro/astro/releases",
+      "date": "2026-10-28",
+      "status": "retrieved",
+      "title": "Releases · withastro/astro · GitHub (https://github.com/withastro/astro/releases)",
+      "note": "Reachability only; relevant instructions require review"
+    },
+    {
+      "requested_url": "https://nextjs.org/docs/llms.txt",
+      "date": "2026-10-28",
+      "status": "retrieved",
+      "title": " (https://nextjs.org/docs/llms.txt)",
+      "note": "Reachability only; relevant instructions require review"
+    },
+    {
+      "requested_url": "https://nodejs.org/en/blog/release",
+      "date": "2026-10-28",
+      "status": "retrieved",
+      "title": "Node.js (https://nodejs.org/en/blog/release)",
+      "note": "Reachability only; relevant instructions require review"
+    },
+    {
+      "requested_url": "https://nodejs.org/en/download",
+      "date": "2026-10-28",
+      "status": "retrieved",
+      "title": "Node.js — Download Node.js® (https://nodejs.org/en/download)",
+      "note": "Reachability only; relevant instructions require review"
+    },
+    {
+      "requested_url": "https://owasp.org/www-community/Threat_Modeling",
+      "date": "2026-10-28",
+      "status": "retrieved",
+      "title": "Threat Modeling | OWASP Foundation (https://owasp.org/www-community/Threat_Modeling)",
+      "note": "May be empty/JS shell; do not claim content reviewed"
+    },
+    {
+      "requested_url": "https://owasp.org/www-project-application-security-verification-standard/",
+      "date": "2026-10-28",
+      "status": "retrieved",
+      "title": "Overview | OWASP Application Security Verification Standard (https://owasp.org/www-project-application-security-verification-standard/)",
+      "note": "Reachability only; relevant instructions require review"
+    },
+    {
+      "requested_url": "https://playwright.dev/docs/accessibility-testing",
+      "date": "2026-10-28",
+      "status": "retrieved",
+      "title": "Accessibility testing | Playwright (https://playwright.dev/docs/accessibility-testing)",
+      "note": "Reachability only; relevant instructions require review"
+    },
+    {
+      "requested_url": "https://playwright.dev/docs/best-practices",
+      "date": "2026-10-28",
+      "status": "retrieved",
+      "title": "Best Practices | Playwright (https://playwright.dev/docs/best-practices)",
+      "note": "Reachability only; relevant instructions require review"
+    },
+    {
+      "requested_url": "https://playwright.dev/docs/release-notes",
+      "date": "2026-10-28",
+      "status": "retrieved",
+      "title": "Release notes | Playwright (https://playwright.dev/docs/release-notes)",
+      "note": "Reachability only; relevant instructions require review"
+    },
+    {
+      "requested_url": "https://resend.com/docs",
+      "date": "2026-10-28",
+      "status": "retrieved",
+      "title": "Introduction - Resend (https://resend.com/docs)",
+      "note": "Reachability only; relevant instructions require review"
+    },
+    {
+      "requested_url": "https://resend.com/docs/llms.txt",
+      "date": "2026-10-28",
+      "status": "retrieved",
+      "title": " (https://resend.com/docs/llms.txt)",
+      "note": "Reachability only; relevant instructions require review"
+    },
+    {
+      "requested_url": "https://spec.openapis.org/oas/latest.html",
+      "date": "2026-10-28",
+      "status": "retrieved",
+      "title": "OpenAPI Specification v3.2.1 (https://spec.openapis.org/oas/latest.html)",
+      "note": "Reachability only; relevant instructions require review"
+    },
+    {
+      "requested_url": "https://supabase.com/docs/guides/auth/auth-smtp",
+      "date": "2026-10-28",
+      "status": "retrieved",
+      "title": "Send emails with custom SMTP | Supabase Docs (https://supabase.com/docs/guides/auth/auth-smtp)",
+      "note": "Reachability only; relevant instructions require review"
+    },
+    {
+      "requested_url": "https://supabase.com/docs/guides/getting-started/mcp",
+      "date": "2026-10-28",
+      "status": "retrieved",
+      "title": "Supabase MCP Server | Supabase Docs (https://supabase.com/docs/guides/getting-started/mcp)",
+      "note": "Reachability only; relevant instructions require review"
+    },
+    {
+      "requested_url": "https://supabase.com/docs/guides/storage/security/access-control",
+      "date": "2026-10-28",
+      "status": "retrieved",
+      "title": "Storage Access Control | Supabase Docs (https://supabase.com/docs/guides/storage/security/access-control)",
+      "note": "Reachability only; relevant instructions require review"
+    },
+    {
+      "requested_url": "https://supabase.com/docs/reference/cli/introduction",
+      "date": "2026-10-28",
+      "status": "retrieved",
+      "title": "CLI Reference | Supabase Docs (https://supabase.com/docs/reference/cli/introduction)",
+      "note": "May be empty/JS shell; do not claim content reviewed"
+    },
+    {
+      "requested_url": "https://supabase.com/llms.txt",
+      "date": "2026-10-28",
+      "status": "retrieved",
+      "title": " (https://supabase.com/llms.txt)",
+      "note": "Reachability only; relevant instructions require review"
+    },
+    {
+      "requested_url": "https://tailwindcss.com/docs/installation",
+      "date": "2026-10-28",
+      "status": "retrieved",
+      "title": "Installing Tailwind CSS with Vite - Tailwind CSS (https://tailwindcss.com/docs/installation)",
+      "note": "Reachability only; relevant instructions require review"
+    },
+    {
+      "requested_url": "https://www.bing.com/webmasters/help/webmaster-guidelines-30fba23a",
+      "date": "2026-10-28",
+      "status": "retrieved",
+      "title": "Bing Webmaster Tools - Help Documentation (https://www.bing.com/webmasters/help/webmaster-guidelines-30fba23a)",
+      "note": "May be empty/JS shell; do not claim content reviewed"
+    },
+    {
+      "requested_url": "https://www.postgresql.org/docs/current/",
+      "date": "2026-10-28",
+      "status": "retrieved",
+      "title": "PostgreSQL: Documentation: 18: PostgreSQL 18.6 Documentation (https://www.postgresql.org/docs/current/)",
+      "note": "Reachability only; relevant instructions require review"
+    },
+    {
+      "requested_url": "https://www.postgresql.org/docs/current/ddl-constraints.html",
+      "date": "2026-10-28",
+      "status": "retrieved",
+      "title": "PostgreSQL: Documentation: 18: 5.5. Constraints (https://www.postgresql.org/docs/current/ddl-constraints.html)",
+      "note": "Reachability only; relevant instructions require review"
+    },
+    {
+      "requested_url": "https://www.postgresql.org/docs/current/ddl-priv.html",
+      "date": "2026-10-28",
+      "status": "retrieved",
+      "title": "PostgreSQL: Documentation: 18: 5.8. Privileges (https://www.postgresql.org/docs/current/ddl-priv.html)",
+      "note": "Reachability only; relevant instructions require review"
+    },
+    {
+      "requested_url": "https://www.postgresql.org/docs/current/tutorial-transactions.html",
+      "date": "2026-10-28",
+      "status": "retrieved",
+      "title": "PostgreSQL: Documentation: 18: 3.4. Transactions (https://www.postgresql.org/docs/current/tutorial-transactions.html)",
+      "note": "Reachability only; relevant instructions require review"
+    },
+    {
+      "requested_url": "https://www.sanity.io/docs",
+      "date": "2026-10-28",
+      "status": "retrieved",
+      "title": "Home | Sanity Docs (https://www.sanity.io/docs)",
+      "note": "Reachability only; relevant instructions require review"
+    },
+    {
+      "requested_url": "https://www.sanity.io/pricing",
+      "date": "2026-10-28",
+      "status": "retrieved",
+      "title": "Pricing | Sanity (https://www.sanity.io/pricing)",
+      "note": "Reachability only; relevant instructions require review"
+    },
+    {
+      "requested_url": "https://www.typescriptlang.org/docs/",
+      "date": "2026-10-28",
+      "status": "retrieved",
+      "title": "TypeScript: The starting point for learning TypeScript (https://www.typescriptlang.org/docs/)",
+      "note": "Reachability only; relevant instructions require review"
+    },
+    {
+      "requested_url": "https://www.typescriptlang.org/docs/handbook/intro.html",
+      "date": "2026-10-28",
+      "status": "retrieved",
+      "title": "TypeScript: Handbook - The TypeScript Handbook (https://www.typescriptlang.org/docs/handbook/intro.html)",
+      "note": "Reachability only; relevant instructions require review"
+    },
+    {
+      "requested_url": "https://www.w3.org/WAI/planning/",
+      "date": "2026-10-28",
+      "status": "retrieved",
+      "title": "Planning and Policies Overview | Web Accessibility Initiative (WAI) | W3C (https://www.w3.org/WAI/planning/)",
+      "note": "Reachability only; relevant instructions require review"
+    },
+    {
+      "requested_url": "https://www.w3.org/WAI/test-evaluate/",
+      "date": "2026-10-28",
+      "status": "retrieved",
+      "title": "Evaluating Web Accessibility Overview | Web Accessibility Initiative (WAI) | W3C (https://www.w3.org/WAI/test-evaluate/)",
+      "note": "Reachability only; relevant instructions require review"
+    }
+  ]
+}

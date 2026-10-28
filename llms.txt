@@ -1,0 +1,26 @@
+# Agent Website Blueprint
+
+> Documentation and automation blueprint, not a prebuilt website. Start with the operating contract and master prompt. Recheck current official instructions before implementation.
+
+## Entry points
+- [README](README.md): Beginner workflow and repository map.
+- [Agent contract](AGENTS.md): State/evidence/approval/security rules.
+- [Start here](prompts/START-HERE.md): Prompt selection.
+- [Master builder](prompts/website-builder.md): Discovery through maintenance.
+- [Resume](prompts/resume-project.md): Continue from actual Git/project state.
+
+## Current authoritative information
+- [Freshness protocol](docs/source-freshness.md): Match installed versions, inspect changes/advisories, verify instructions.
+- [Source register](docs/sources.md): Official tool/framework/security/pricing navigation.
+- [Machine-readable sources](docs/sources.json): Topic IDs, URLs, indexes, changelogs, review/execution status.
+- [External retrieval evidence](docs/external-link-checks.json): Reachability only, not content review.
+
+## Implementation and evidence
+- [Guide index](docs/README.md): Twenty-four guides in order; choose required modules.
+- [Planning](planning/README.md): Persistent .project/ templates and ADR.
+- [Security baseline](security/security-baseline.md): Applicable control/evidence matrix.
+- [Recipes](examples/README.md): Six architectural examples, not tested applications.
+- [Integrations](docs/integrations.md): Optional need/cost/alternative matrix.
+- [Templates](templates/README.md): Config, contracts, read-only SQL and headers.
+- [Automation](automation/README.md): Opt-in bounded daily/weekly checks and monthly human review.
+- [Validation](docs/validation-report.md): Executed checks and limits.

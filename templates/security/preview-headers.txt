@@ -1,0 +1,4 @@
+# Separate PREVIEW deployment only: merge with its adapted baseline.
+# Do not copy this blanket rule into the production asset directory.
+/*
+  X-Robots-Tag: noindex, nofollow

@@ -1,0 +1,26 @@
+# Copy into .github/workflows/ only after configuring an owned target.
+name: Daily public health
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '23 9 * * *'
+permissions:
+  contents: read
+concurrency:
+  group: website-daily-health
+  cancel-in-progress: false
+jobs:
+  health:
+    if: vars.ENABLE_DAILY_CHECKS == 'true'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1, official tag verified 2026-10-28
+        with:
+          persist-credentials: false
+      - name: Explicit authorized GET checks
+        run: python3 scripts/health.py automation/monitor.json
+      - name: Summary
+        if: always()
+        run: |
+          echo 'Review job status and redacted probe results. This is a scheduled sample, not continuous uptime monitoring.' >> "$GITHUB_STEP_SUMMARY"

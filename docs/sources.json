@@ -1,0 +1,732 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-10-28",
+  "note": "Review date is not freshness guarantee or integration execution. Discovery entries are not verified. Resolve installed versions and current advisories before each integration task.",
+  "sources": [
+    {
+      "id": "cloudflare-workers",
+      "topic": "hosting",
+      "url": "https://developers.cloudflare.com/workers/static-assets/",
+      "use_for": "Static hosting model",
+      "status": "reviewed",
+      "last_reviewed": "2026-10-28",
+      "integration_executed": false,
+      "notes": "",
+      "index_url": "https://developers.cloudflare.com/workers/llms.txt",
+      "changelog_url": "https://developers.cloudflare.com/changelog/"
+    },
+    {
+      "id": "cloudflare-next",
+      "topic": "frameworks",
+      "url": "https://developers.cloudflare.com/workers/framework-guides/web-apps/nextjs/",
+      "use_for": "Current Next.js deployment/adapter compatibility",
+      "status": "reviewed",
+      "last_reviewed": "2026-10-28",
+      "integration_executed": false,
+      "notes": "Reviewed recommendation changed; recheck current page before installing any adapter."
+    },
+    {
+      "id": "cloudflare-config",
+      "topic": "deployment",
+      "url": "https://developers.cloudflare.com/workers/wrangler/configuration/",
+      "use_for": "Config fields and installed schema",
+      "status": "reviewed",
+      "last_reviewed": "2026-10-28",
+      "integration_executed": false,
+      "notes": ""
+    },
+    {
+      "id": "cloudflare-headers",
+      "topic": "security",
+      "url": "https://developers.cloudflare.com/workers/static-assets/headers/",
+      "use_for": "Static vs generated-response headers",
+      "status": "reviewed",
+      "last_reviewed": "2026-10-28",
+      "integration_executed": false,
+      "notes": ""
+    },
+    {
+      "id": "cloudflare-best",
+      "topic": "security",
+      "url": "https://developers.cloudflare.com/workers/best-practices/workers-best-practices/",
+      "use_for": "Worker patterns and unsafe defaults",
+      "status": "reviewed",
+      "last_reviewed": "2026-10-28",
+      "integration_executed": false,
+      "notes": ""
+    },
+    {
+      "id": "cloudflare-preview",
+      "topic": "deployment",
+      "url": "https://developers.cloudflare.com/workers/previews/",
+      "use_for": "Preview isolation, settings and access",
+      "status": "reviewed",
+      "last_reviewed": "2026-10-28",
+      "integration_executed": false,
+      "notes": ""
+    },
+    {
+      "id": "cloudflare-github",
+      "topic": "deployment",
+      "url": "https://developers.cloudflare.com/workers/ci-cd/builds/git-integration/github-integration/",
+      "use_for": "Git deployment connection",
+      "status": "reviewed",
+      "last_reviewed": "2026-10-28",
+      "integration_executed": false,
+      "notes": ""
+    },
+    {
+      "id": "cloudflare-rollback",
+      "topic": "recovery",
+      "url": "https://developers.cloudflare.com/workers/versions-and-deployments/rollbacks/",
+      "use_for": "Rollback versions, constraints",
+      "status": "reviewed",
+      "last_reviewed": "2026-10-28",
+      "integration_executed": false,
+      "notes": ""
+    },
+    {
+      "id": "cloudflare-price",
+      "topic": "costs",
+      "url": "https://developers.cloudflare.com/workers/platform/pricing/",
+      "use_for": "Requests/CPU/static asset billing boundaries",
+      "status": "reviewed",
+      "last_reviewed": "2026-10-28",
+      "integration_executed": false,
+      "notes": ""
+    },
+    {
+      "id": "cloudflare-limits",
+      "topic": "costs",
+      "url": "https://developers.cloudflare.com/workers/platform/limits/",
+      "use_for": "Runtime limits and quotas",
+      "status": "reviewed",
+      "last_reviewed": "2026-10-28",
+      "integration_executed": false,
+      "notes": ""
+    },
+    {
+      "id": "pages-limits",
+      "topic": "costs",
+      "url": "https://developers.cloudflare.com/pages/platform/limits/",
+      "use_for": "Build/files/function limits",
+      "status": "reviewed",
+      "last_reviewed": "2026-10-28",
+      "integration_executed": false,
+      "notes": ""
+    },
+    {
+      "id": "d1-price",
+      "topic": "costs",
+      "url": "https://developers.cloudflare.com/d1/platform/pricing/",
+      "use_for": "Rows read/written and storage",
+      "status": "reviewed",
+      "last_reviewed": "2026-10-28",
+      "integration_executed": false,
+      "notes": "",
+      "index_url": "https://developers.cloudflare.com/d1/llms.txt"
+    },
+    {
+      "id": "kv-price",
+      "topic": "costs",
+      "url": "https://developers.cloudflare.com/kv/platform/pricing/",
+      "use_for": "Operation/storage quotas",
+      "status": "reviewed",
+      "last_reviewed": "2026-10-28",
+      "integration_executed": false,
+      "notes": "",
+      "index_url": "https://developers.cloudflare.com/kv/llms.txt"
+    },
+    {
+      "id": "r2-price",
+      "topic": "costs",
+      "url": "https://developers.cloudflare.com/r2/pricing/",
+      "use_for": "Storage classes/operation pricing",
+      "status": "reviewed",
+      "last_reviewed": "2026-10-28",
+      "integration_executed": false,
+      "notes": "",
+      "index_url": "https://developers.cloudflare.com/r2/llms.txt"
+    },
+    {
+      "id": "turnstile-validation",
+      "topic": "security",
+      "url": "https://developers.cloudflare.com/turnstile/get-started/server-side-validation/",
+      "use_for": "Mandatory backend token verification",
+      "status": "reviewed",
+      "last_reviewed": "2026-10-28",
+      "integration_executed": false,
+      "notes": ""
+    },
+    {
+      "id": "astro-install",
+      "topic": "frameworks",
+      "url": "https://docs.astro.build/en/install-and-setup/",
+      "use_for": "Supported Node/scaffolding/versions",
+      "status": "reviewed",
+      "last_reviewed": "2026-10-28",
+      "integration_executed": false,
+      "notes": "",
+      "changelog_url": "https://github.com/withastro/astro/releases"
+    },
+    {
+      "id": "astro-cloudflare",
+      "topic": "frameworks",
+      "url": "https://docs.astro.build/en/guides/deploy/cloudflare/",
+      "use_for": "Framework hosting instructions",
+      "status": "reviewed",
+      "last_reviewed": "2026-10-28",
+      "integration_executed": false,
+      "notes": ""
+    },
+    {
+      "id": "astro-ai",
+      "topic": "frameworks",
+      "url": "https://docs.astro.build/en/guides/build-with-ai/",
+      "use_for": "Current agent/docs discovery",
+      "status": "reviewed",
+      "last_reviewed": "2026-10-28",
+      "integration_executed": false,
+      "notes": "Root llms.txt returned 404 in this review; use official navigation/MCP guidance, do not assume a guessed index exists."
+    },
+    {
+      "id": "next-docs",
+      "topic": "frameworks",
+      "url": "https://nextjs.org/docs",
+      "use_for": "Framework APIs, versions and upgrade guidance",
+      "status": "reviewed",
+      "last_reviewed": "2026-10-28",
+      "integration_executed": false,
+      "notes": "",
+      "index_url": "https://nextjs.org/docs/llms.txt",
+      "changelog_url": "https://github.com/vercel/next.js/releases"
+    },
+    {
+      "id": "tailwind",
+      "topic": "frameworks",
+      "url": "https://tailwindcss.com/docs/installation/using-vite",
+      "use_for": "Current integration; styling optional",
+      "status": "reviewed",
+      "last_reviewed": "2026-10-28",
+      "integration_executed": false,
+      "notes": "",
+      "changelog_url": "https://github.com/tailwindlabs/tailwindcss/releases"
+    },
+    {
+      "id": "typescript",
+      "topic": "frameworks",
+      "url": "https://www.typescriptlang.org/docs/",
+      "use_for": "Type system/compiler config",
+      "status": "discovery",
+      "last_reviewed": null,
+      "integration_executed": false,
+      "notes": "",
+      "changelog_url": "https://github.com/microsoft/TypeScript/releases"
+    },
+    {
+      "id": "node",
+      "topic": "tools",
+      "url": "https://nodejs.org/en/download",
+      "use_for": "Current supported LTS runtime",
+      "status": "discovery",
+      "last_reviewed": null,
+      "integration_executed": false,
+      "notes": "",
+      "changelog_url": "https://nodejs.org/en/blog/release"
+    },
+    {
+      "id": "supabase-keys",
+      "topic": "database",
+      "url": "https://supabase.com/docs/guides/getting-started/api-keys",
+      "use_for": "Publishable vs secret key boundaries",
+      "status": "reviewed",
+      "last_reviewed": "2026-10-28",
+      "integration_executed": false,
+      "notes": "",
+      "index_url": "https://supabase.com/llms.txt",
+      "changelog_url": "https://supabase.com/changelog"
+    },
+    {
+      "id": "supabase-rls",
+      "topic": "security",
+      "url": "https://supabase.com/docs/guides/database/postgres/row-level-security",
+      "use_for": "Row/operation authorization",
+      "status": "reviewed",
+      "last_reviewed": "2026-10-28",
+      "integration_executed": false,
+      "notes": ""
+    },
+    {
+      "id": "supabase-grants",
+      "topic": "security",
+      "url": "https://supabase.com/docs/guides/api/securing-your-api",
+      "use_for": "Data API exposure, grants and RLS",
+      "status": "reviewed",
+      "last_reviewed": "2026-10-28",
+      "integration_executed": false,
+      "notes": ""
+    },
+    {
+      "id": "supabase-auth",
+      "topic": "auth",
+      "url": "https://supabase.com/docs/guides/auth/server-side",
+      "use_for": "Framework SSR/cookie integration",
+      "status": "reviewed",
+      "last_reviewed": "2026-10-28",
+      "integration_executed": false,
+      "notes": ""
+    },
+    {
+      "id": "supabase-passwords",
+      "topic": "auth",
+      "url": "https://supabase.com/docs/guides/auth/passwords",
+      "use_for": "Verification and recovery flows",
+      "status": "reviewed",
+      "last_reviewed": "2026-10-28",
+      "integration_executed": false,
+      "notes": ""
+    },
+    {
+      "id": "supabase-redirects",
+      "topic": "auth",
+      "url": "https://supabase.com/docs/guides/auth/redirect-urls",
+      "use_for": "Exact callback/site URL controls",
+      "status": "reviewed",
+      "last_reviewed": "2026-10-28",
+      "integration_executed": false,
+      "notes": ""
+    },
+    {
+      "id": "supabase-backups",
+      "topic": "recovery",
+      "url": "https://supabase.com/docs/guides/platform/backups",
+      "use_for": "Plan backup behavior and object exclusions",
+      "status": "reviewed",
+      "last_reviewed": "2026-10-28",
+      "integration_executed": false,
+      "notes": ""
+    },
+    {
+      "id": "supabase-price",
+      "topic": "costs",
+      "url": "https://supabase.com/pricing",
+      "use_for": "Active projects/storage/egress/auth and pausing",
+      "status": "reviewed",
+      "last_reviewed": "2026-10-28",
+      "integration_executed": false,
+      "notes": ""
+    },
+    {
+      "id": "supabase-changelog",
+      "topic": "database",
+      "url": "https://supabase.com/changelog",
+      "use_for": "Breaking/security/platform updates",
+      "status": "reviewed",
+      "last_reviewed": "2026-10-28",
+      "integration_executed": false,
+      "notes": "Markdown changelog endpoint could not be retrieved by the web tool; HTML reviewed instead."
+    },
+    {
+      "id": "supabase-mcp",
+      "topic": "tools",
+      "url": "https://supabase.com/docs/guides/getting-started/mcp",
+      "use_for": "Official connector setup/scoping",
+      "status": "discovery",
+      "last_reviewed": null,
+      "integration_executed": false,
+      "notes": ""
+    },
+    {
+      "id": "postgres",
+      "topic": "database",
+      "url": "https://www.postgresql.org/docs/current/",
+      "use_for": "Constraints, transactions, privileges and RLS semantics",
+      "status": "discovery",
+      "last_reviewed": null,
+      "integration_executed": false,
+      "notes": ""
+    },
+    {
+      "id": "github-schedules",
+      "topic": "automation",
+      "url": "https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule",
+      "use_for": "Delay/default-branch/inactivity behavior",
+      "status": "reviewed",
+      "last_reviewed": "2026-10-28",
+      "integration_executed": false,
+      "notes": ""
+    },
+    {
+      "id": "github-secure-use",
+      "topic": "security",
+      "url": "https://docs.github.com/en/actions/reference/security/secure-use",
+      "use_for": "Pinning/untrusted code/permissions",
+      "status": "reviewed",
+      "last_reviewed": "2026-10-28",
+      "integration_executed": false,
+      "notes": ""
+    },
+    {
+      "id": "github-dependabot",
+      "topic": "automation",
+      "url": "https://docs.github.com/en/code-security/reference/supply-chain-security/dependabot-options-reference",
+      "use_for": "Update ecosystem/schedule config",
+      "status": "reviewed",
+      "last_reviewed": "2026-10-28",
+      "integration_executed": false,
+      "notes": ""
+    },
+    {
+      "id": "github-billing",
+      "topic": "costs",
+      "url": "https://docs.github.com/en/billing/concepts/product-billing/github-actions",
+      "use_for": "Public/private runner, minutes and storage",
+      "status": "reviewed",
+      "last_reviewed": "2026-10-28",
+      "integration_executed": false,
+      "notes": ""
+    },
+    {
+      "id": "github-limits",
+      "topic": "automation",
+      "url": "https://docs.github.com/en/actions/reference/limits",
+      "use_for": "Runner/job limits",
+      "status": "reviewed",
+      "last_reviewed": "2026-10-28",
+      "integration_executed": false,
+      "notes": ""
+    },
+    {
+      "id": "github-notifications",
+      "topic": "automation",
+      "url": "https://docs.github.com/en/subscriptions-and-notifications/how-tos/managing-github-actions-notifications",
+      "use_for": "Actual notification preferences",
+      "status": "reviewed",
+      "last_reviewed": "2026-10-28",
+      "integration_executed": false,
+      "notes": ""
+    },
+    {
+      "id": "checkout-pin",
+      "topic": "automation",
+      "url": "https://github.com/actions/checkout/releases/tag/v7.0.1",
+      "use_for": "Action release/pin review",
+      "status": "reviewed",
+      "last_reviewed": "2026-10-28",
+      "integration_executed": false,
+      "notes": "Official Git ref and action.yml reviewed; pinned commit 3d3c42e5aac5ba805825da76410c181273ba90b1. Runner uses node24; keep runner current."
+    },
+    {
+      "id": "owasp-rest",
+      "topic": "security",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/REST_Security_Cheat_Sheet.html",
+      "use_for": "API security and CORS guidance",
+      "status": "reviewed",
+      "last_reviewed": "2026-10-28",
+      "integration_executed": false,
+      "notes": ""
+    },
+    {
+      "id": "owasp-csrf",
+      "topic": "security",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html",
+      "use_for": "Cookie write request defenses",
+      "status": "reviewed",
+      "last_reviewed": "2026-10-28",
+      "integration_executed": false,
+      "notes": ""
+    },
+    {
+      "id": "owasp-upload",
+      "topic": "security",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/File_Upload_Cheat_Sheet.html",
+      "use_for": "Upload trust boundaries",
+      "status": "reviewed",
+      "last_reviewed": "2026-10-28",
+      "integration_executed": false,
+      "notes": ""
+    },
+    {
+      "id": "owasp-csp",
+      "topic": "security",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html",
+      "use_for": "Compatible CSP rollout",
+      "status": "reviewed",
+      "last_reviewed": "2026-10-28",
+      "integration_executed": false,
+      "notes": ""
+    },
+    {
+      "id": "owasp-asvs",
+      "topic": "security",
+      "url": "https://owasp.org/www-project-application-security-verification-standard/",
+      "use_for": "Risk-based security requirements",
+      "status": "discovery",
+      "last_reviewed": null,
+      "integration_executed": false,
+      "notes": ""
+    },
+    {
+      "id": "owasp-session",
+      "topic": "security",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html",
+      "use_for": "Sessions/cookies/revocation",
+      "status": "discovery",
+      "last_reviewed": null,
+      "integration_executed": false,
+      "notes": ""
+    },
+    {
+      "id": "nist-incidents",
+      "topic": "recovery",
+      "url": "https://csrc.nist.gov/pubs/sp/800/61/r3/final",
+      "use_for": "Incident response reference",
+      "status": "reviewed",
+      "last_reviewed": "2026-10-28",
+      "integration_executed": false,
+      "notes": "Replaces a nonexistent OWASP incident-response cheat-sheet URL found during link review."
+    },
+    {
+      "id": "playwright",
+      "topic": "testing",
+      "url": "https://playwright.dev/docs/test-configuration",
+      "use_for": "Browser configuration, supported runtimes and test setup",
+      "status": "reviewed",
+      "last_reviewed": "2026-10-28",
+      "integration_executed": false,
+      "notes": "",
+      "changelog_url": "https://playwright.dev/docs/release-notes"
+    },
+    {
+      "id": "lighthouse",
+      "topic": "testing",
+      "url": "https://developer.chrome.com/docs/lighthouse/overview",
+      "use_for": "Lab quality audit setup/limits",
+      "status": "reviewed",
+      "last_reviewed": "2026-10-28",
+      "integration_executed": false,
+      "notes": ""
+    },
+    {
+      "id": "wcag",
+      "topic": "accessibility",
+      "url": "https://www.w3.org/TR/WCAG22/",
+      "use_for": "Published accessibility standard/errata",
+      "status": "reviewed",
+      "last_reviewed": "2026-10-28",
+      "integration_executed": false,
+      "notes": ""
+    },
+    {
+      "id": "wai",
+      "topic": "accessibility",
+      "url": "https://www.w3.org/WAI/tutorials/",
+      "use_for": "Practical semantic/forms/image guidance",
+      "status": "reviewed",
+      "last_reviewed": "2026-10-28",
+      "integration_executed": false,
+      "notes": ""
+    },
+    {
+      "id": "vitals",
+      "topic": "performance",
+      "url": "https://web.dev/articles/vitals",
+      "use_for": "Current field metrics and thresholds",
+      "status": "reviewed",
+      "last_reviewed": "2026-10-28",
+      "integration_executed": false,
+      "notes": ""
+    },
+    {
+      "id": "google-schema",
+      "topic": "seo",
+      "url": "https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data",
+      "use_for": "Structured data policies/verification",
+      "status": "reviewed",
+      "last_reviewed": "2026-10-28",
+      "integration_executed": false,
+      "notes": ""
+    },
+    {
+      "id": "google-product",
+      "topic": "seo",
+      "url": "https://developers.google.com/search/docs/appearance/structured-data/product",
+      "use_for": "Product rich-result rules",
+      "status": "reviewed",
+      "last_reviewed": "2026-10-28",
+      "integration_executed": false,
+      "notes": ""
+    },
+    {
+      "id": "google-event",
+      "topic": "seo",
+      "url": "https://developers.google.com/search/docs/appearance/structured-data/event",
+      "use_for": "Event fields/status/timezone rules",
+      "status": "reviewed",
+      "last_reviewed": "2026-10-28",
+      "integration_executed": false,
+      "notes": ""
+    },
+    {
+      "id": "google-org",
+      "topic": "seo",
+      "url": "https://developers.google.com/search/docs/appearance/structured-data/organization",
+      "use_for": "Organization facts",
+      "status": "reviewed",
+      "last_reviewed": "2026-10-28",
+      "integration_executed": false,
+      "notes": ""
+    },
+    {
+      "id": "google-noindex",
+      "topic": "seo",
+      "url": "https://developers.google.com/search/docs/crawling-indexing/block-indexing",
+      "use_for": "Noindex versus robots/auth",
+      "status": "reviewed",
+      "last_reviewed": "2026-10-28",
+      "integration_executed": false,
+      "notes": ""
+    },
+    {
+      "id": "bing",
+      "topic": "seo",
+      "url": "https://www.bing.com/webmasters/help/webmaster-guidelines-30fba23a",
+      "use_for": "Bing official indexing tools",
+      "status": "discovery",
+      "last_reviewed": null,
+      "integration_executed": false,
+      "notes": "Endpoint returned a JavaScript shell; content not verified."
+    },
+    {
+      "id": "resend-docs",
+      "topic": "email",
+      "url": "https://resend.com/docs/send-with-nodejs",
+      "use_for": "Backend send, keys and verified domain",
+      "status": "reviewed",
+      "last_reviewed": "2026-10-28",
+      "integration_executed": false,
+      "notes": "",
+      "index_url": "https://resend.com/docs/llms.txt"
+    },
+    {
+      "id": "resend-price",
+      "topic": "costs",
+      "url": "https://resend.com/pricing",
+      "use_for": "Daily/monthly email quotas",
+      "status": "reviewed",
+      "last_reviewed": "2026-10-28",
+      "integration_executed": false,
+      "notes": ""
+    },
+    {
+      "id": "stripe-fulfillment",
+      "topic": "payments",
+      "url": "https://docs.stripe.com/checkout/fulfillment",
+      "use_for": "Signed events/idempotent verified payment fulfillment",
+      "status": "reviewed",
+      "last_reviewed": "2026-10-28",
+      "integration_executed": false,
+      "notes": "Reviewed via official Stripe documentation search connector; no live/sandbox integration executed."
+    },
+    {
+      "id": "stripe-webhooks",
+      "topic": "payments",
+      "url": "https://docs.stripe.com/webhooks",
+      "use_for": "Signature verification and event handling",
+      "status": "reviewed",
+      "last_reviewed": "2026-10-28",
+      "integration_executed": false,
+      "notes": "Reviewed via official Stripe documentation search connector."
+    },
+    {
+      "id": "stripe-price",
+      "topic": "costs",
+      "url": "https://stripe.com/pricing",
+      "use_for": "Country/payment/add-on fee review",
+      "status": "discovery",
+      "last_reviewed": null,
+      "integration_executed": false,
+      "notes": ""
+    },
+    {
+      "id": "stripe-sandbox",
+      "topic": "payments",
+      "url": "https://docs.stripe.com/sandboxes",
+      "use_for": "Isolated payment testing",
+      "status": "discovery",
+      "last_reviewed": null,
+      "integration_executed": false,
+      "notes": ""
+    },
+    {
+      "id": "calendar",
+      "topic": "calendar",
+      "url": "https://developers.google.com/workspace/calendar/api/guides/overview",
+      "use_for": "OAuth/scopes/quotas/event model",
+      "status": "discovery",
+      "last_reviewed": null,
+      "integration_executed": false,
+      "notes": ""
+    },
+    {
+      "id": "decap",
+      "topic": "cms",
+      "url": "https://decapcms.org/docs/",
+      "use_for": "Git-backed CMS authentication/publishing",
+      "status": "discovery",
+      "last_reviewed": null,
+      "integration_executed": false,
+      "notes": ""
+    },
+    {
+      "id": "sanity",
+      "topic": "cms",
+      "url": "https://www.sanity.io/docs",
+      "use_for": "Managed CMS schema/roles/export",
+      "status": "discovery",
+      "last_reviewed": null,
+      "integration_executed": false,
+      "notes": ""
+    },
+    {
+      "id": "directus",
+      "topic": "cms",
+      "url": "https://directus.io/docs/",
+      "use_for": "CMS backend, licensing and hosting requirements",
+      "status": "discovery",
+      "last_reviewed": null,
+      "integration_executed": false,
+      "notes": ""
+    },
+    {
+      "id": "cloudflare-analytics",
+      "topic": "analytics",
+      "url": "https://developers.cloudflare.com/web-analytics/",
+      "use_for": "Privacy-conscious aggregate analytics",
+      "status": "discovery",
+      "last_reviewed": null,
+      "integration_executed": false,
+      "notes": ""
+    },
+    {
+      "id": "zap",
+      "topic": "testing",
+      "url": "https://www.zaproxy.org/docs/docker/baseline-scan/",
+      "use_for": "Optional passive scan scope/controls",
+      "status": "reviewed",
+      "last_reviewed": "2026-10-28",
+      "integration_executed": false,
+      "notes": ""
+    },
+    {
+      "id": "openapi",
+      "topic": "api",
+      "url": "https://spec.openapis.org/oas/latest.html",
+      "use_for": "Contract syntax/validation",
+      "status": "discovery",
+      "last_reviewed": null,
+      "integration_executed": false,
+      "notes": ""
+    }
+  ]
+}

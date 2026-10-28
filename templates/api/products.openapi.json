@@ -1,0 +1,463 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Product API design contract",
+    "version": "0.1.0",
+    "description": "Illustrative application-owned routes, not an implemented service. CSRF and role/object authorization must be implemented separately."
+  },
+  "servers": [
+    {
+      "url": "https://example.com",
+      "description": "Replace with authorized app origin; not a deployed API"
+    }
+  ],
+  "paths": {
+    "/api/products": {
+      "get": {
+        "summary": "Published-only public list",
+        "security": [],
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 50,
+              "default": 20
+            }
+          },
+          {
+            "name": "cursor",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "maxLength": 200
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Only public fields, published and not deleted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "items",
+                    "next_cursor"
+                  ],
+                  "properties": {
+                    "items": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/Product"
+                      }
+                    },
+                    "next_cursor": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Admin create (draft by default)",
+        "description": "Server-validated identity plus admin role and per-object/tenant permission required. Cookie writes require CSRF protection. Server sets revision; never trust client role/owner. Transaction and redacted audit required.",
+        "security": [
+          {
+            "sessionCookie": []
+          },
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Missing/invalid identity"
+          },
+          "403": {
+            "description": "Insufficient role/object permission"
+          },
+          "404": {
+            "description": "Not found or not visible"
+          },
+          "409": {
+            "description": "Business conflict"
+          },
+          "412": {
+            "description": "Revision precondition failed"
+          },
+          "413": {
+            "description": "Body exceeds 16 KiB application limit"
+          },
+          "415": {
+            "description": "Expected application/json"
+          },
+          "422": {
+            "description": "Invalid field or business constraint"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "500": {
+            "description": "Redacted internal error with request ID"
+          },
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Product"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProductInput"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/products/{id}": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "format": "uuid"
+          }
+        }
+      ],
+      "get": {
+        "summary": "Public published detail",
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "Public fields; ETag revision returned",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Product"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not published, deleted or absent"
+          }
+        }
+      },
+      "patch": {
+        "summary": "Admin update, publish/unpublish with optimistic revision",
+        "description": "Server-validated identity plus admin role and per-object/tenant permission required. Cookie writes require CSRF protection. Server sets revision; never trust client role/owner. Transaction and redacted audit required.",
+        "security": [
+          {
+            "sessionCookie": []
+          },
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Missing/invalid identity"
+          },
+          "403": {
+            "description": "Insufficient role/object permission"
+          },
+          "404": {
+            "description": "Not found or not visible"
+          },
+          "409": {
+            "description": "Business conflict"
+          },
+          "412": {
+            "description": "Revision precondition failed"
+          },
+          "413": {
+            "description": "Body exceeds 16 KiB application limit"
+          },
+          "415": {
+            "description": "Expected application/json"
+          },
+          "422": {
+            "description": "Invalid field or business constraint"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "500": {
+            "description": "Redacted internal error with request ID"
+          },
+          "200": {
+            "description": "Updated; new ETag header",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Product"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProductPatch"
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "If-Match",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Previously returned ETag, e.g. quoted revision. A changed revision returns 412."
+          }
+        ]
+      },
+      "delete": {
+        "summary": "Admin soft delete",
+        "description": "Server-validated identity plus admin role and per-object/tenant permission required. Cookie writes require CSRF protection. Server sets revision; never trust client role/owner. Transaction and redacted audit required.",
+        "security": [
+          {
+            "sessionCookie": []
+          },
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Missing/invalid identity"
+          },
+          "403": {
+            "description": "Insufficient role/object permission"
+          },
+          "404": {
+            "description": "Not found or not visible"
+          },
+          "409": {
+            "description": "Business conflict"
+          },
+          "412": {
+            "description": "Revision precondition failed"
+          },
+          "413": {
+            "description": "Body exceeds 16 KiB application limit"
+          },
+          "415": {
+            "description": "Expected application/json"
+          },
+          "422": {
+            "description": "Invalid field or business constraint"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "500": {
+            "description": "Redacted internal error with request ID"
+          },
+          "204": {
+            "description": "Soft deleted; omitted from public reads"
+          }
+        },
+        "parameters": [
+          {
+            "name": "If-Match",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Previously returned ETag, e.g. quoted revision. A changed revision returns 412."
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "sessionCookie": {
+        "type": "apiKey",
+        "in": "cookie",
+        "name": "session",
+        "description": "Illustrative only; use actual provider cookie name. CSRF token plus trusted origin on unsafe methods."
+      },
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT",
+        "description": "Validate issuer/audience/signature/expiry then authorize role/object."
+      }
+    },
+    "schemas": {
+      "Product": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "slug": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+            "maxLength": 120
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160
+          },
+          "description": {
+            "type": "string",
+            "maxLength": 10000
+          },
+          "price_minor": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 2147483647
+          },
+          "currency": {
+            "type": "string",
+            "pattern": "^[A-Z]{3}$"
+          },
+          "category": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 120
+          },
+          "published": {
+            "type": "boolean",
+            "default": false
+          },
+          "revision": {
+            "type": "integer",
+            "minimum": 1
+          }
+        },
+        "required": [
+          "id",
+          "slug",
+          "name",
+          "price_minor",
+          "currency",
+          "published",
+          "revision"
+        ]
+      },
+      "ProductInput": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "slug": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+            "maxLength": 120
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160
+          },
+          "description": {
+            "type": "string",
+            "maxLength": 10000
+          },
+          "price_minor": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 2147483647
+          },
+          "currency": {
+            "type": "string",
+            "pattern": "^[A-Z]{3}$"
+          },
+          "category": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 120
+          },
+          "published": {
+            "type": "boolean",
+            "default": false
+          }
+        },
+        "required": [
+          "slug",
+          "name",
+          "price_minor",
+          "currency"
+        ]
+      },
+      "ProductPatch": {
+        "type": "object",
+        "additionalProperties": false,
+        "minProperties": 1,
+        "properties": {
+          "slug": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+            "maxLength": 120
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160
+          },
+          "description": {
+            "type": "string",
+            "maxLength": 10000
+          },
+          "price_minor": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 2147483647
+          },
+          "currency": {
+            "type": "string",
+            "pattern": "^[A-Z]{3}$"
+          },
+          "category": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 120
+          },
+          "published": {
+            "type": "boolean",
+            "default": false
+          }
+        }
+      }
+    }
+  }
+}

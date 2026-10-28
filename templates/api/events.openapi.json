@@ -1,0 +1,496 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Event API design contract",
+    "version": "0.1.0",
+    "description": "Illustrative application-owned routes, not an implemented service. CSRF and role/object authorization must be implemented separately."
+  },
+  "servers": [
+    {
+      "url": "https://example.com",
+      "description": "Replace with authorized app origin; not a deployed API"
+    }
+  ],
+  "paths": {
+    "/api/events": {
+      "get": {
+        "summary": "Published-only public list",
+        "security": [],
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 50,
+              "default": 20
+            }
+          },
+          {
+            "name": "cursor",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "maxLength": 200
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Only public fields, published and not deleted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "items",
+                    "next_cursor"
+                  ],
+                  "properties": {
+                    "items": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/Event"
+                      }
+                    },
+                    "next_cursor": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Admin create (draft by default)",
+        "description": "Server-validated identity plus admin role and per-object/tenant permission required. Cookie writes require CSRF protection. Server sets revision; never trust client role/owner. Transaction and redacted audit required.",
+        "security": [
+          {
+            "sessionCookie": []
+          },
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Missing/invalid identity"
+          },
+          "403": {
+            "description": "Insufficient role/object permission"
+          },
+          "404": {
+            "description": "Not found or not visible"
+          },
+          "409": {
+            "description": "Business conflict"
+          },
+          "412": {
+            "description": "Revision precondition failed"
+          },
+          "413": {
+            "description": "Body exceeds 16 KiB application limit"
+          },
+          "415": {
+            "description": "Expected application/json"
+          },
+          "422": {
+            "description": "Invalid field or business constraint"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "500": {
+            "description": "Redacted internal error with request ID"
+          },
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Event"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EventInput"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/events/{id}": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "format": "uuid"
+          }
+        }
+      ],
+      "get": {
+        "summary": "Public published detail",
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "Public fields; ETag revision returned",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Event"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not published, deleted or absent"
+          }
+        }
+      },
+      "patch": {
+        "summary": "Admin update, publish/unpublish with optimistic revision",
+        "description": "Server-validated identity plus admin role and per-object/tenant permission required. Cookie writes require CSRF protection. Server sets revision; never trust client role/owner. Transaction and redacted audit required.",
+        "security": [
+          {
+            "sessionCookie": []
+          },
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Missing/invalid identity"
+          },
+          "403": {
+            "description": "Insufficient role/object permission"
+          },
+          "404": {
+            "description": "Not found or not visible"
+          },
+          "409": {
+            "description": "Business conflict"
+          },
+          "412": {
+            "description": "Revision precondition failed"
+          },
+          "413": {
+            "description": "Body exceeds 16 KiB application limit"
+          },
+          "415": {
+            "description": "Expected application/json"
+          },
+          "422": {
+            "description": "Invalid field or business constraint"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "500": {
+            "description": "Redacted internal error with request ID"
+          },
+          "200": {
+            "description": "Updated; new ETag header",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Event"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EventPatch"
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "If-Match",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Previously returned ETag, e.g. quoted revision. A changed revision returns 412."
+          }
+        ]
+      },
+      "delete": {
+        "summary": "Admin soft delete",
+        "description": "Server-validated identity plus admin role and per-object/tenant permission required. Cookie writes require CSRF protection. Server sets revision; never trust client role/owner. Transaction and redacted audit required.",
+        "security": [
+          {
+            "sessionCookie": []
+          },
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Missing/invalid identity"
+          },
+          "403": {
+            "description": "Insufficient role/object permission"
+          },
+          "404": {
+            "description": "Not found or not visible"
+          },
+          "409": {
+            "description": "Business conflict"
+          },
+          "412": {
+            "description": "Revision precondition failed"
+          },
+          "413": {
+            "description": "Body exceeds 16 KiB application limit"
+          },
+          "415": {
+            "description": "Expected application/json"
+          },
+          "422": {
+            "description": "Invalid field or business constraint"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "500": {
+            "description": "Redacted internal error with request ID"
+          },
+          "204": {
+            "description": "Soft deleted; omitted from public reads"
+          }
+        },
+        "parameters": [
+          {
+            "name": "If-Match",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Previously returned ETag, e.g. quoted revision. A changed revision returns 412."
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "sessionCookie": {
+        "type": "apiKey",
+        "in": "cookie",
+        "name": "session",
+        "description": "Illustrative only; use actual provider cookie name. CSRF token plus trusted origin on unsafe methods."
+      },
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT",
+        "description": "Validate issuer/audience/signature/expiry then authorize role/object."
+      }
+    },
+    "schemas": {
+      "Event": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "slug": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+            "maxLength": 120
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160
+          },
+          "description": {
+            "type": "string",
+            "maxLength": 10000
+          },
+          "starts_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "ends_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "time_zone": {
+            "type": "string",
+            "maxLength": 100,
+            "description": "Validate real IANA zone and end > start in application"
+          },
+          "location": {
+            "type": "string",
+            "maxLength": 500
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "scheduled",
+              "cancelled",
+              "postponed"
+            ]
+          },
+          "published": {
+            "type": "boolean",
+            "default": false
+          },
+          "revision": {
+            "type": "integer",
+            "minimum": 1
+          }
+        },
+        "required": [
+          "id",
+          "slug",
+          "title",
+          "starts_at",
+          "ends_at",
+          "time_zone",
+          "location",
+          "status",
+          "published",
+          "revision"
+        ]
+      },
+      "EventInput": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "slug": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+            "maxLength": 120
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160
+          },
+          "description": {
+            "type": "string",
+            "maxLength": 10000
+          },
+          "starts_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "ends_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "time_zone": {
+            "type": "string",
+            "maxLength": 100,
+            "description": "Validate real IANA zone and end > start in application"
+          },
+          "location": {
+            "type": "string",
+            "maxLength": 500
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "scheduled",
+              "cancelled",
+              "postponed"
+            ]
+          },
+          "published": {
+            "type": "boolean",
+            "default": false
+          }
+        },
+        "required": [
+          "slug",
+          "title",
+          "starts_at",
+          "ends_at",
+          "time_zone",
+          "location",
+          "status"
+        ]
+      },
+      "EventPatch": {
+        "type": "object",
+        "additionalProperties": false,
+        "minProperties": 1,
+        "properties": {
+          "slug": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+            "maxLength": 120
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160
+          },
+          "description": {
+            "type": "string",
+            "maxLength": 10000
+          },
+          "starts_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "ends_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "time_zone": {
+            "type": "string",
+            "maxLength": 100,
+            "description": "Validate real IANA zone and end > start in application"
+          },
+          "location": {
+            "type": "string",
+            "maxLength": 500
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "scheduled",
+              "cancelled",
+              "postponed"
+            ]
+          },
+          "published": {
+            "type": "boolean",
+            "default": false
+          }
+        }
+      }
+    }
+  }
+}

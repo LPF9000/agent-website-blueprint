@@ -1,0 +1,27 @@
+{
+  "authorized": false,
+  "origin": "https://example.com",
+  "timeout_seconds": 10,
+  "tls_min_days": 14,
+  "expected_headers": {
+    "x-content-type-options": "nosniff",
+    "referrer-policy": "",
+    "permissions-policy": "",
+    "content-security-policy": "",
+    "strict-transport-security": "max-age="
+  },
+  "endpoints": [
+    {
+      "path": "/",
+      "status": 200,
+      "contains": ""
+    }
+  ],
+  "redirects": {},
+  "weekly_paths": [
+    "/"
+  ],
+  "sitemap_path": "/sitemap.xml",
+  "robots_path": "/robots.txt",
+  "expect_indexable": true
+}

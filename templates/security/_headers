@@ -1,0 +1,9 @@
+# Static, script-free baseline only. Adapt CSP before use with framework inline code,
+# Turnstile, Auth, fonts, payments or embeds. Worker/SSR responses need middleware.
+# HSTS intentionally starts short: review domain/subdomains before increasing.
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  Strict-Transport-Security: max-age=300
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'

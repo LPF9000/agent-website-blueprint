@@ -1,0 +1,64 @@
+# Copy into .github/workflows/ only after reviewing config/scripts and usage.
+name: Weekly public quality
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '41 10 * * 2'
+permissions:
+  contents: read
+concurrency:
+  group: website-weekly-quality
+  cancel-in-progress: false
+jobs:
+  public-checks:
+    if: vars.ENABLE_WEEKLY_CHECKS == 'true'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1, official tag verified 2026-10-28
+        with:
+          persist-credentials: false
+      - name: Headers, TLS and endpoints
+        run: python3 scripts/health.py automation/monitor.json
+      - name: Sitemap, robots and allowlisted internal links
+        if: always()
+        run: python3 scripts/weekly.py automation/monitor.json
+      - name: Summary
+        if: always()
+        run: |
+          echo 'Review failed schedules and dependency PRs. Public link coverage is limited to the explicit allowlist; anchors/queries and child sitemaps are not checked.' >> "$GITHUB_STEP_SUMMARY"
+  npm-quality:
+    if: vars.ENABLE_WEEKLY_CHECKS == 'true' && vars.ENABLE_NPM_QUALITY == 'true'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      E2E_BASE_URL: ${{ vars.QUALITY_PREVIEW_URL }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1, official tag verified 2026-10-28
+        with:
+          persist-credentials: false
+      - name: Check runtime and required integration
+        run: |
+          node --version
+          npm --version
+          test -n "$E2E_BASE_URL"
+          test -f package-lock.json
+          node -e "const s=require('./package.json').scripts||{}; for (const n of ['test:smoke','audit:quality']) if(!s[n]) throw Error('Required npm script missing: '+n)"
+      - name: Reproducible install (review package scripts before enabling)
+        id: install
+        run: npm ci
+      - name: Dependency audit
+        run: npm audit --audit-level=high
+      - name: Install selected browser
+        if: always() && steps.install.outcome == 'success'
+        run: npx --no-install playwright install --with-deps chromium
+      - name: Read-only essential browser smoke on authorized preview
+        if: always() && steps.install.outcome == 'success'
+        run: npm run test:smoke
+      - name: Configured Lighthouse and accessibility audits on preview
+        if: always() && steps.install.outcome == 'success'
+        run: npm run audit:quality
+      - name: Summary
+        if: always()
+        run: |
+          echo 'Review audit findings and failed runs. npm/browser/Lighthouse checks require project scripts, locked tools, compatible runner Node and an authorized preview. No production writes are allowed.' >> "$GITHUB_STEP_SUMMARY"
