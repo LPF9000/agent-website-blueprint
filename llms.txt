@@ -29,3 +29,8 @@
 - [Failure modes](docs/25-operational-failure-modes.md): Configuration lifecycle, recoverable fulfillment, protected files, Access identity and honest evidence.
 - [Environment matrix](planning/environment-matrix-template.md): Intended parity and configuration ownership, without secret values.
 - [Release evidence](planning/release-evidence-template.md): Exact preview/version and failure-case verification.
+
+## Repository use and maintenance
+- [Worked local example](examples/worked-static-site/README.md): Fictional requirements through reproducible local HTTP evidence and handoff; no hosted site.
+- [Roadmap](ROADMAP.md): Current work and verification gaps.
+- [Release policy](docs/releases.md): Versioning, compatibility and evidence boundaries.

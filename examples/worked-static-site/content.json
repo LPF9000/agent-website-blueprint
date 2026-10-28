@@ -1,0 +1,18 @@
+{
+  "name": "Field Notes Circle",
+  "summary": "A fictional group for sharing observations from short walks.",
+  "pages": [
+    {
+      "path": "/",
+      "title": "Field Notes Circle",
+      "heading": "Look closely. Write a little.",
+      "body": "This fictional group meets for quiet walks and shares notes about what people notice. This example contains no real organization, venue or event."
+    },
+    {
+      "path": "/visit/",
+      "title": "Plan a visit | Field Notes Circle",
+      "heading": "Plan a visit",
+      "body": "This is a demonstration page. There is no real meeting to book, address to visit or signup form. A real project would add accurate, owner-approved details here."
+    }
+  ]
+}

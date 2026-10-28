@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.2.0 — 2026-10-28
+
+- Tighten the README around one starting workflow, navigation, current-source retrieval and actual project maturity.
+- Add a fictional runnable static walkthrough with populated project records, a dependency-free build and four local artifact/HTTP tests. Hosted/browser/production behavior remains unverified.
+- Add practical documentation/improvement issue forms, a focused PR template, a small roadmap and release policy.
+- Keep the existing architecture recipes and operational templates optional; no hosted website, cloud resources or promotion is added.
+
 ## 0.1.1 — 2026-10-28
 
 - Add generic operational failure-mode guidance and environment/release evidence templates.

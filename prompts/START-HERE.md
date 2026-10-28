@@ -9,3 +9,7 @@ Use this folder from a website repository with the blueprint available as refere
 5. Use [resume-project](resume-project.md) next session and [maintenance-agent](maintenance-agent.md) after launch.
 
 If you want to modify this blueprint rather than build a website, say that explicitly. A fork of the blueprint should remain a documentation project until you request implementation. Never paste passwords, tokens, or private account records into a prompt.
+
+## See a concrete local example
+
+The [worked walkthrough](../examples/worked-static-site/README.md) shows filled project records, a reproducible small artifact and executed local HTTP checks. It requires only Python and does not create cloud resources. Its evidence is deliberately limited to what ran.

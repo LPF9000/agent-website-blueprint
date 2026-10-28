@@ -1,0 +1,25 @@
+name: Scoped improvement
+description: Propose a focused change to the blueprint or its examples.
+title: "Proposal: "
+body:
+  - type: textarea
+    id: need
+    attributes:
+      label: Which workflow needs improvement?
+      description: Describe the user problem and affected guide. Keep project details generic.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Smallest useful change
+      description: Explain the result and any additional dependencies, costs or maintenance responsibilities.
+    validations:
+      required: true
+  - type: textarea
+    id: verification
+    attributes:
+      label: How would we verify it?
+      description: Name acceptance criteria, official sources and local or isolated-preview checks. Do not promise unexecuted results.
+    validations:
+      required: true

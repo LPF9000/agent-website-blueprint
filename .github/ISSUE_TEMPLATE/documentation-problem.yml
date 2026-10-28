@@ -1,0 +1,28 @@
+name: Documentation problem
+description: Report an incorrect instruction, broken link or outdated reference.
+title: "Documentation: "
+body:
+  - type: markdown
+    attributes:
+      value: Do not post credentials, private project details or live vulnerability reports. Use SECURITY.md for security reporting.
+  - type: input
+    id: location
+    attributes:
+      label: File and section
+      description: Include the blueprint version or commit if known.
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What is incorrect or unclear?
+      description: Give a small redacted reproduction and expected result where relevant. Do not paste an environment file.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence and current official guidance
+      description: Link the relevant vendor documentation or explain what you checked. Distinguish an observed failure from a proposed improvement.
+    validations:
+      required: false

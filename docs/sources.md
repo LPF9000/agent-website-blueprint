@@ -95,3 +95,9 @@ Source checking is not a scheduled service. The [source-review script](../script
 - [access-jwt](https://developers.cloudflare.com/cloudflare-one/access-controls/applications/http-apps/authorization-cookie/validating-json/): Origin JWT validation with expected issuer/audience. Focused documentation reviewed 2026-10-28; integration not executed.
 - [access-token-types](https://developers.cloudflare.com/cloudflare-one/access-controls/applications/http-apps/authorization-cookie/application-token/): Human/machine claim differences; service subject may be empty. Focused documentation reviewed 2026-10-28; integration not executed.
 - [access-service-tokens](https://developers.cloudflare.com/cloudflare-one/access-controls/service-credentials/service-tokens/): Scoped CI/service credentials and actual authorization policy. Focused documentation reviewed 2026-10-28; integration not executed.
+
+## Repository maintenance references
+
+- [github-issue-forms](https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/syntax-for-issue-forms): Issue form structure and fields. Reviewed 2026-10-28; consult current instructions on use.
+- [github-releases](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository): Exact-commit tags and release publication. Reviewed 2026-10-28; consult current instructions on use.
+- [python-local-preview](https://docs.python.org/3/library/http.server.html): Development-only loopback preview; not production hosting. Reviewed 2026-10-28; consult current instructions on use.

@@ -103,7 +103,7 @@ def run(root=ROOT):
     required+=['templates/'+n+'/README.md' for n in ['environment','github','cloudflare','supabase','api','security']]
     for name in required:
         if not (root/name).is_file():errors.append('Missing required file '+name)
-    paths=[p for p in root.rglob('*') if p.is_file() and not any(x in p.relative_to(root).parts for x in ('.git','__pycache__','.venv'))]
+    paths=[p for p in root.rglob('*') if p.is_file() and not any(x in p.relative_to(root).parts for x in ('.git','__pycache__','.venv','dist'))]
     for p in paths:
         rel=str(p.relative_to(root));counts['files']+=1
         try:text=p.read_text()
@@ -134,6 +134,20 @@ def run(root=ROOT):
                 data=yaml.load(text,Loader=UniqueLoader)
                 if 'workflows/' in rel:errors.extend(workflow_errors(data,rel))
                 elif p.name=='dependabot.yml' and (data.get('version')!=2 or not data.get('updates')):errors.append(rel+': invalid Dependabot structure')
+                elif '.github/ISSUE_TEMPLATE/' in rel:
+                    if not isinstance(data,dict) or not data.get('name') or not data.get('description') or not isinstance(data.get('body'),list):
+                        errors.append(rel+': invalid issue form structure')
+                    else:
+                        ids=[]
+                        for field in data['body']:
+                            kind=field.get('type');attrs=field.get('attributes',{})
+                            if kind not in ('markdown','input','textarea','dropdown','checkboxes'):errors.append(rel+': unsupported issue form field')
+                            if kind=='markdown':
+                                if not attrs.get('value'):errors.append(rel+': empty issue form text')
+                            else:
+                                if not field.get('id') or not attrs.get('label'):errors.append(rel+': issue field requires id and label')
+                                ids.append(field.get('id'))
+                        if len(ids)!=len(set(ids)):errors.append(rel+': duplicate issue form field id')
             except Exception as exc:errors.append(rel+': invalid YAML '+str(exc))
     if (root/'.env.example').exists():
         for line in (root/'.env.example').read_text().splitlines():
